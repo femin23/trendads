@@ -2247,12 +2247,24 @@ section {
     grid-template-columns: 1fr 1fr;
   }
 @media (max-width: 1024px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-visual {
+    display: none !important;
+  }
+
   .hero-brand-logo-large {
     font-size: 5rem;
   }
 }
 
 @media (max-width: 768px) {
+  .about-visual {
+    display: none !important;
+  }
+
   .hero-brand-logo-large {
     font-size: 3.25rem;
   }
