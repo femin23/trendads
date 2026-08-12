@@ -1,18 +1,46 @@
 // TRENDADS DIGITAL MARKETING - PURE JAVASCRIPT LOGIC
 
-// 0. Site Preloader Dismissal
-window.addEventListener('load', () => {
-  const preloader = document.getElementById('sitePreloader');
-  const progress = document.getElementById('preloaderProgress');
-  if (progress) {
-    progress.style.width = '100%';
+// 0. Site Preloader & Rapid 3D Icon Cycler
+(function initPreloaderCycler() {
+  const cyclerImg = document.getElementById('cyclerImg');
+  const iconPaths = [
+    'assets/icon_pack/1.png',
+    'assets/icon_pack/2.png',
+    'assets/icon_pack/3.png',
+    'assets/icon_pack/4.png',
+    'assets/icon_pack/5.png',
+    'assets/icon_pack/6.png',
+    'assets/icon_pack/7.png',
+    'assets/icon_pack/8.png'
+  ];
+
+  let currentIndex = 0;
+  let cycleInterval = null;
+
+  if (cyclerImg) {
+    cycleInterval = setInterval(() => {
+      currentIndex = (currentIndex + 1) % iconPaths.length;
+      cyclerImg.src = iconPaths[currentIndex];
+      cyclerImg.classList.remove('pulse-swap');
+      void cyclerImg.offsetWidth;
+      cyclerImg.classList.add('pulse-swap');
+    }, 140);
   }
-  setTimeout(() => {
-    if (preloader) {
-      preloader.classList.add('preloader-hidden');
+
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('sitePreloader');
+    const progress = document.getElementById('preloaderProgress');
+    if (progress) {
+      progress.style.width = '100%';
     }
-  }, 400);
-});
+    setTimeout(() => {
+      if (cycleInterval) clearInterval(cycleInterval);
+      if (preloader) {
+        preloader.classList.add('preloader-hidden');
+      }
+    }, 500);
+  });
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
   // 0. Initialize Hero Fluid Vector Flow Grid Canvas

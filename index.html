@@ -27,15 +27,34 @@
 
 <body>
 
-  <!-- SITE PRELOADER SCREEN -->
+  <!-- SITE PRELOADER SCREEN WITH RAPID 3D ICON ANIMATION -->
   <div class="site-preloader" id="sitePreloader">
+    <!-- RAPID FLOATING BACKGROUND 3D ICONS -->
+    <div class="preloader-bg-icons">
+      <img src="assets/icon_pack/1.png" alt="" class="pre-float-icon icon-1">
+      <img src="assets/icon_pack/2.png" alt="" class="pre-float-icon icon-2">
+      <img src="assets/icon_pack/3.png" alt="" class="pre-float-icon icon-3">
+      <img src="assets/icon_pack/4.png" alt="" class="pre-float-icon icon-4">
+      <img src="assets/icon_pack/5.png" alt="" class="pre-float-icon icon-5">
+      <img src="assets/icon_pack/6.png" alt="" class="pre-float-icon icon-6">
+      <img src="assets/icon_pack/7.png" alt="" class="pre-float-icon icon-7">
+      <img src="assets/icon_pack/8.png" alt="" class="pre-float-icon icon-8">
+    </div>
+
     <div class="preloader-content">
+      <!-- FAST RAPID 3D ICON CYCLER VIEWPORT -->
+      <div class="preloader-icon-cycler" id="preloaderIconCycler">
+        <img src="assets/icon_pack/1.png" alt="Preloader Icon" id="cyclerImg" class="cycler-img">
+      </div>
+
       <div class="preloader-logo-wrap">
         <img src="assets/logo.png" alt="TrendAds Logo" class="preloader-logo">
       </div>
+
       <div class="preloader-bar">
         <div class="preloader-progress" id="preloaderProgress"></div>
       </div>
+      <span class="preloader-status-text">Loading Experience...</span>
     </div>
   </div>
 
