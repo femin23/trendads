@@ -11,7 +11,11 @@
     'assets/icon_pack/5.png',
     'assets/icon_pack/6.png',
     'assets/icon_pack/7.png',
-    'assets/icon_pack/8.png'
+    'assets/icon_pack/8.png',
+    'assets/hero_icons/insta.png',
+    'assets/hero_icons/whatsapp.png',
+    'assets/hero_icons/linkedin.png',
+    'assets/hero_icons/facebbok.png'
   ];
 
   let currentIndex = 0;

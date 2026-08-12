@@ -392,11 +392,11 @@ section {
   height: 100%;
 }
 
-/* SITE PRELOADER SCREEN */
+/* SITE PRELOADER SCREEN (LIGHT BLUE / GLASS DYNAMIC DESIGN) */
 .site-preloader {
   position: fixed;
   inset: 0;
-  background: linear-gradient(135deg, #070b14 0%, #0f172a 100%);
+  background: linear-gradient(135deg, #f0f6ff 0%, #ffffff 50%, #e0edff 100%);
   z-index: 99999;
   display: flex;
   align-items: center;
@@ -428,41 +428,39 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.08);
+  background: #ffffff;
   border-radius: 22px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1.5px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 12px 32px rgba(37, 99, 235, 0.35);
+  border: 1.5px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.15), 0 4px 10px rgba(0, 0, 0, 0.04);
 }
 
 .cycler-img {
   width: 58px;
   height: 58px;
   object-fit: contain;
-  filter: drop-shadow(0 10px 20px rgba(37, 99, 235, 0.5));
+  filter: drop-shadow(0 8px 16px rgba(37, 99, 235, 0.25));
 }
 
 .cycler-img.pulse-swap {
-  animation: cyclerSwap 0.14s ease-in-out;
+  animation: cyclerSwapLinear 0.14s ease-in-out;
 }
 
-@keyframes cyclerSwap {
+@keyframes cyclerSwapLinear {
   0% {
-    transform: scale(0.65) rotate(-15deg);
-    opacity: 0.5;
+    transform: scale(0.7) translateY(-8px);
+    opacity: 0.6;
   }
   50% {
-    transform: scale(1.18) rotate(6deg);
+    transform: scale(1.15) translateY(4px);
     opacity: 1;
   }
   100% {
-    transform: scale(1) rotate(0deg);
+    transform: scale(1) translateY(0);
     opacity: 1;
   }
 }
 
-/* RAPID FLOATING BACKGROUND ICONS */
+/* RAPID FLOATING BACKGROUND ICONS (NO ROTATION - DIRECTIONAL TRANSLATION) */
 .preloader-bg-icons {
   position: absolute;
   inset: 0;
@@ -473,40 +471,57 @@ section {
 
 .pre-float-icon {
   position: absolute;
-  width: 64px;
-  height: 64px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
-  opacity: 0.65;
-  filter: drop-shadow(0 12px 24px rgba(37, 99, 235, 0.4));
-  animation: floatFastRotate 2.8s infinite ease-in-out alternate;
+  opacity: 0.75;
+  filter: drop-shadow(0 10px 20px rgba(37, 99, 235, 0.18));
 }
 
-.pre-float-icon.icon-1 { top: 12%; left: 8%; animation-duration: 1.8s; }
-.pre-float-icon.icon-2 { top: 18%; right: 10%; animation-duration: 2.2s; }
-.pre-float-icon.icon-3 { bottom: 18%; left: 10%; animation-duration: 1.6s; }
-.pre-float-icon.icon-4 { bottom: 22%; right: 12%; animation-duration: 2.4s; }
-.pre-float-icon.icon-5 { top: 46%; left: 6%; animation-duration: 2s; }
-.pre-float-icon.icon-6 { top: 48%; right: 6%; animation-duration: 1.9s; }
-.pre-float-icon.icon-7 { top: 8%; left: 45%; animation-duration: 2.1s; }
-.pre-float-icon.icon-8 { bottom: 8%; right: 44%; animation-duration: 1.7s; }
+/* Directional Linear Translation Animations */
+.pre-float-icon.icon-1  { top: 10%; left: 8%;  animation: moveLinear1 2.4s infinite ease-in-out alternate; }
+.pre-float-icon.icon-2  { top: 16%; right: 10%; animation: moveLinear2 2.8s infinite ease-in-out alternate; }
+.pre-float-icon.icon-3  { bottom: 16%; left: 10%; animation: moveLinear3 2.2s infinite ease-in-out alternate; }
+.pre-float-icon.icon-4  { bottom: 20%; right: 12%; animation: moveLinear4 3.0s infinite ease-in-out alternate; }
+.pre-float-icon.icon-5  { top: 45%; left: 5%;   animation: moveLinear2 2.6s infinite ease-in-out alternate; }
+.pre-float-icon.icon-6  { top: 48%; right: 5%;  animation: moveLinear1 2.5s infinite ease-in-out alternate; }
+.pre-float-icon.icon-7  { top: 8%;  left: 45%;  animation: moveLinear4 2.3s infinite ease-in-out alternate; }
+.pre-float-icon.icon-8  { bottom: 8%; right: 44%; animation: moveLinear3 2.7s infinite ease-in-out alternate; }
 
-@keyframes floatFastRotate {
-  0% {
-    transform: translateY(0) rotate(0deg) scale(0.9);
-  }
-  50% {
-    transform: translateY(-28px) rotate(180deg) scale(1.18);
-  }
-  100% {
-    transform: translateY(12px) rotate(360deg) scale(1);
-  }
+.pre-float-icon.icon-9  { top: 28%; left: 22%;  animation: moveLinear3 2.4s infinite ease-in-out alternate; }
+.pre-float-icon.icon-10 { top: 32%; right: 20%; animation: moveLinear1 2.9s infinite ease-in-out alternate; }
+.pre-float-icon.icon-11 { bottom: 30%; left: 24%; animation: moveLinear4 2.2s infinite ease-in-out alternate; }
+.pre-float-icon.icon-12 { bottom: 28%; right: 22%; animation: moveLinear2 2.6s infinite ease-in-out alternate; }
+
+@keyframes moveLinear1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, -45px) scale(1.1); }
+  100% { transform: translate(20px, 25px) scale(0.95); }
+}
+
+@keyframes moveLinear2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(45px, -35px) scale(1.12); }
+  100% { transform: translate(-25px, 35px) scale(0.92); }
+}
+
+@keyframes moveLinear3 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-40px, 35px) scale(1.08); }
+  100% { transform: translate(35px, -25px) scale(0.96); }
+}
+
+@keyframes moveLinear4 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(35px, 45px) scale(1.15); }
+  100% { transform: translate(-40px, -30px) scale(0.9); }
 }
 
 .preloader-status-text {
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 700;
-  color: #94a3b8;
+  color: #475569;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-top: 14px;
@@ -515,20 +530,20 @@ section {
 .preloader-logo-wrap {
   position: relative;
   margin-bottom: 28px;
-  animation: preloaderPulse 2s ease-in-out infinite;
+  animation: preloaderPulseLight 2s ease-in-out infinite;
 }
 
 .preloader-logo {
   height: 56px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.6)) brightness(0) invert(1);
+  filter: drop-shadow(0 10px 25px rgba(37, 99, 235, 0.2));
 }
 
 .preloader-bar {
   width: 180px;
   height: 4px;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(37, 99, 235, 0.12);
   border-radius: 4px;
   overflow: hidden;
   position: relative;
@@ -543,14 +558,14 @@ section {
   animation: preloaderFill 1.5s ease-in-out infinite;
 }
 
-@keyframes preloaderPulse {
+@keyframes preloaderPulseLight {
   0%, 100% {
     transform: scale(1);
-    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4)) brightness(0) invert(1);
+    filter: drop-shadow(0 10px 20px rgba(37, 99, 235, 0.18));
   }
   50% {
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 35px rgba(59, 130, 246, 0.8)) brightness(0) invert(1);
+    transform: scale(1.04);
+    filter: drop-shadow(0 15px 30px rgba(37, 99, 235, 0.35));
   }
 }
 
