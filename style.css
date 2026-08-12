@@ -2307,10 +2307,27 @@ section {
   }
 
   .services-grid,
-  .team-grid,
   .about-features-grid,
   .process-flow {
     grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px;
+  }
+
+  .team-card {
+    padding: 12px 10px;
+  }
+
+  .team-name {
+    font-size: 0.95rem;
+  }
+
+  .team-role {
+    font-size: 0.75rem;
+    margin-bottom: 8px;
   }
 
   .form-row {
