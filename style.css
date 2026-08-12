@@ -92,6 +92,7 @@ button, input, textarea {
 }
 
 /* SECTION BACKGROUND DECOR & LIGHT BLUE PATTERNS */
+/* SECTION BACKGROUND DECOR & LIGHT BLUE PATTERNS WITH DYNAMIC ANIMATIONS */
 section {
   position: relative;
   overflow: hidden;
@@ -101,11 +102,27 @@ section {
 .team-section,
 .contact-section {
   background: linear-gradient(180deg, #f7faff 0%, #ffffff 50%, #f4f8ff 100%);
+  background-size: 100% 200%;
+  animation: bgGradientWave 14s ease-in-out infinite alternate;
 }
 
 .services-section,
 .process-section {
   background: linear-gradient(180deg, #eff5ff 0%, #f8fafc 50%, #eef4ff 100%);
+  background-size: 100% 200%;
+  animation: bgGradientWave 16s ease-in-out infinite alternate;
+}
+
+@keyframes bgGradientWave {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
 }
 
 .section-bg-decor {
@@ -121,23 +138,74 @@ section {
   z-index: 2;
 }
 
-/* LIGHT BLUE PATTERNS */
+/* LIGHT BLUE PATTERNS WITH MOVEMENT ANIMATION */
 .blue-pattern-dots {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(37, 99, 235, 0.12) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(37, 99, 235, 0.14) 1.5px, transparent 1.5px);
   background-size: 28px 28px;
   opacity: 0.75;
+  animation: dotsPatternMove 20s linear infinite;
+}
+
+@keyframes dotsPatternMove {
+  0% {
+    background-position: 0px 0px;
+  }
+  50% {
+    background-position: 14px 14px;
+  }
+  100% {
+    background-position: 28px 28px;
+  }
 }
 
 .blue-pattern-grid {
   position: absolute;
   inset: 0;
   background-image: 
-    linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(37, 99, 235, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37, 99, 235, 0.06) 1px, transparent 1px);
   background-size: 44px 44px;
   opacity: 0.85;
+  animation: gridPatternMove 26s linear infinite;
+}
+
+@keyframes gridPatternMove {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 44px 44px;
+  }
+}
+
+/* ANIMATED GLOWING AMBIENT SPHERES */
+.glow-sphere {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  animation: sphereGlowMorph 10s ease-in-out infinite alternate;
+}
+
+@keyframes sphereGlowMorph {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.35;
+  }
+  33% {
+    transform: translate(-30px, 20px) scale(1.15);
+    opacity: 0.55;
+  }
+  66% {
+    transform: translate(25px, -25px) scale(0.92);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-15px, 15px) scale(1.08);
+    opacity: 0.5;
+  }
 }
 
 .sphere-about {
@@ -146,6 +214,8 @@ section {
   background: rgba(59, 130, 246, 0.15);
   top: -80px;
   right: -50px;
+  animation-duration: 10s;
+  animation-delay: -1s;
 }
 
 .sphere-services-1 {
@@ -154,6 +224,8 @@ section {
   background: rgba(99, 102, 241, 0.12);
   top: 10%;
   left: -100px;
+  animation-duration: 14s;
+  animation-delay: -3s;
 }
 
 .sphere-services-2 {
@@ -162,6 +234,8 @@ section {
   background: rgba(37, 99, 235, 0.14);
   bottom: 5%;
   right: -80px;
+  animation-duration: 12s;
+  animation-delay: -1.5s;
 }
 
 .sphere-team {
@@ -170,6 +244,8 @@ section {
   background: rgba(59, 130, 246, 0.12);
   bottom: -40px;
   left: 20%;
+  animation-duration: 15s;
+  animation-delay: -4s;
 }
 
 .sphere-process {
@@ -178,6 +254,8 @@ section {
   background: rgba(37, 99, 235, 0.12);
   top: -50px;
   right: 15%;
+  animation-duration: 11s;
+  animation-delay: -2.5s;
 }
 
 .sphere-contact {
@@ -186,9 +264,11 @@ section {
   background: rgba(59, 130, 246, 0.16);
   top: -60px;
   left: -80px;
+  animation-duration: 13s;
+  animation-delay: -3.5s;
 }
 
-/* FLOATING LIGHT BLUE BACKGROUND ICONS */
+/* FLOATING LIGHT BLUE BACKGROUND ICONS WITH SWAY ANIMATION */
 .bg-floating-icon {
   position: absolute;
   pointer-events: none;
@@ -202,6 +282,55 @@ section {
 .bg-floating-icon svg {
   width: 56px;
   height: 56px;
+}
+
+.float-anim-1 { animation: bgIconFloatSway1 8s ease-in-out infinite alternate; }
+.float-anim-2 { animation: bgIconFloatSway2 11s ease-in-out infinite alternate; }
+.float-anim-3 { animation: bgIconFloatSway3 10s ease-in-out infinite alternate; }
+
+@keyframes bgIconFloatSway1 {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.14;
+  }
+  50% {
+    transform: translateY(-22px) translateX(12px) scale(1.1);
+    opacity: 0.22;
+  }
+  100% {
+    transform: translateY(10px) translateX(-10px) scale(0.95);
+    opacity: 0.12;
+  }
+}
+
+@keyframes bgIconFloatSway2 {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.12;
+  }
+  50% {
+    transform: translateY(18px) translateX(-16px) scale(1.08);
+    opacity: 0.24;
+  }
+  100% {
+    transform: translateY(-14px) translateX(14px) scale(0.92);
+    opacity: 0.15;
+  }
+}
+
+@keyframes bgIconFloatSway3 {
+  0% {
+    transform: translateY(0) translateX(0) scale(1);
+    opacity: 0.16;
+  }
+  50% {
+    transform: translateY(-16px) translateX(-12px) scale(1.12);
+    opacity: 0.26;
+  }
+  100% {
+    transform: translateY(18px) translateX(10px) scale(0.96);
+    opacity: 0.14;
+  }
 }
 
 /* Background Icon Position Presets */
