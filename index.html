@@ -20,15 +20,30 @@
 
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Preload Assets -->
+  <link rel="preload" href="assets/logo.png" as="image">
 </head>
 
 <body>
 
+  <!-- SITE PRELOADER SCREEN -->
+  <div class="site-preloader" id="sitePreloader">
+    <div class="preloader-content">
+      <div class="preloader-logo-wrap">
+        <img src="assets/logo.png" alt="TrendAds Logo" class="preloader-logo">
+      </div>
+      <div class="preloader-bar">
+        <div class="preloader-progress" id="preloaderProgress"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- HEADER / NAVBAR -->
   <header class="navbar-header" id="header">
     <div class="container navbar-container">
-      <a href="#home" class="logo">
-        <span class="logo-text">Trend<span class="logo-accent">Ads.</span></span>
+      <a href="#home" class="logo" aria-label="TrendAds Home">
+        <img src="assets/logo.png" alt="TrendAds Logo" class="header-logo-img">
       </a>
 
       <nav class="nav-menu" id="navMenu">
@@ -585,8 +600,8 @@
   <footer class="site-footer">
     <div class="container footer-container">
       <div class="footer-brand">
-        <a href="#home" class="logo">
-          <span class="logo-text">Trend<span class="logo-accent">Ads.</span></span>
+        <a href="#home" class="logo" aria-label="TrendAds Home">
+          <img src="assets/logo.png" alt="TrendAds Logo" class="footer-logo-img">
         </a>
         <p class="footer-tagline">
           Empowering brands through data-driven digital strategies, innovative marketing campaigns, and cutting-edge web

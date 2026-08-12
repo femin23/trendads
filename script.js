@@ -1,5 +1,19 @@
 // TRENDADS DIGITAL MARKETING - PURE JAVASCRIPT LOGIC
 
+// 0. Site Preloader Dismissal
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('sitePreloader');
+  const progress = document.getElementById('preloaderProgress');
+  if (progress) {
+    progress.style.width = '100%';
+  }
+  setTimeout(() => {
+    if (preloader) {
+      preloader.classList.add('preloader-hidden');
+    }
+  }, 400);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   // 0. Initialize Hero Fluid Vector Flow Grid Canvas
   function initHeroFluidCanvas() {

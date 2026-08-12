@@ -392,6 +392,107 @@ section {
   height: 100%;
 }
 
+/* SITE PRELOADER SCREEN */
+.site-preloader {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #070b14 0%, #0f172a 100%);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.site-preloader.preloader-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader-logo-wrap {
+  position: relative;
+  margin-bottom: 28px;
+  animation: preloaderPulse 2s ease-in-out infinite;
+}
+
+.preloader-logo {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.6)) brightness(0) invert(1);
+}
+
+.preloader-bar {
+  width: 180px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.preloader-progress {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #2563eb 0%, #3b82f6 50%, #6366f1 100%);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+  animation: preloaderFill 1.5s ease-in-out infinite;
+}
+
+@keyframes preloaderPulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4)) brightness(0) invert(1);
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 35px rgba(59, 130, 246, 0.8)) brightness(0) invert(1);
+  }
+}
+
+@keyframes preloaderFill {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 70%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.header-logo-img {
+  height: 38px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.header-logo-img:hover {
+  transform: scale(1.04);
+}
+
+.footer-logo-img {
+  height: 42px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
 .logo-text {
   font-family: var(--font-heading);
   font-size: 1.75rem;
