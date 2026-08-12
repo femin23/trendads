@@ -40,12 +40,9 @@
     setTimeout(() => {
       if (cycleInterval) clearInterval(cycleInterval);
       if (preloader) {
-        preloader.classList.add('shattered');
-        setTimeout(() => {
-          preloader.classList.add('preloader-hidden');
-        }, 800);
+        preloader.classList.add('preloader-hidden');
       }
-    }, 450);
+    }, 500);
   });
 })();
 
