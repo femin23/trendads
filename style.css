@@ -1694,6 +1694,18 @@ section {
   color: var(--text-dark);
 }
 
+/* SERVICES SECTION HEADER (ABOVE PINNED STAGE) */
+.services-header-wrapper {
+  padding: 60px 0 24px 0;
+  background: transparent;
+  position: relative;
+  z-index: 20;
+}
+
+.services-header-wrapper .badge-pill {
+  margin-bottom: 0;
+}
+
 /* SERVICES SECTION - FULL-SCREEN PINNED SCROLL-DRIVEN FILMSTRIP HERO CAROUSEL */
 .services-scroll-pin-wrapper {
   position: relative;
