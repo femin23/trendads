@@ -19,8 +19,8 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="style.css">
-  
+  <link rel="stylesheet" href="style.css?v=42">
+
   <!-- Preload Assets -->
   <link rel="preload" href="assets/logo.png" as="image">
 </head>
@@ -105,7 +105,8 @@
       <div class="container hero-layout-container">
         <!-- HERO MAIN BANNER IMAGE -->
         <div class="hero-image-wrapper">
-          <img src="assets/hero.png" alt="TrendAds - Branding, Digital Marketing, Web Development" class="hero-main-banner-img">
+          <img src="assets/hero.png" alt="TrendAds - Branding, Digital Marketing, Web Development"
+            class="hero-main-banner-img">
         </div>
       </div>
     </section>
@@ -196,238 +197,91 @@
       </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section class="services-section section-padding bg-alt" id="services">
-      <div class="section-bg-decor">
-        <div class="blue-pattern-dots"></div>
-        <div class="glow-sphere sphere-services-1"></div>
-        <div class="glow-sphere sphere-services-2"></div>
-        <div class="bg-floating-icon bg-icon-services-1 float-anim-1"><i data-lucide="layers"></i></div>
-        <div class="bg-floating-icon bg-icon-services-2 float-anim-3"><i data-lucide="code-2"></i></div>
-        <div class="bg-floating-icon bg-icon-services-3 float-anim-2"><i data-lucide="bar-chart-2"></i></div>
-        <div class="bg-floating-icon bg-icon-services-4 float-anim-1"><i data-lucide="globe"></i></div>
-      </div>
+    <!-- SERVICES SECTION (FULL-SCREEN PINNED SCROLL-DRIVEN FILMSTRIP CAROUSEL) -->
+    <div class="services-scroll-pin-wrapper" id="services">
+      <section class="services-section" id="servicesStage">
 
-      <div class="floating-decor insta-float"><i data-lucide="instagram"></i></div>
-      <div class="floating-decor megaphone-float">
-        <img src="assets/icon_pack/2.png" alt="Megaphone Decor" class="float-anim-2">
-      </div>
+        <!-- FULL-BLEED EDITORIAL FILMSTRIP CAROUSEL -->
+        <div class="ec-wrapper-outer">
+          <div class="ec-container" id="servicesEditorialCarousel" tabindex="0" role="region"
+            aria-roledescription="carousel" aria-label="Services Showcase Carousel">
 
-      <div class="container text-center">
-        <div class="badge-pill center icon-pill">
-          <img src="assets/icon_pack/2.png" alt="Services Icon" class="pill-3d-icon">
-          <span>SERVICES</span>
-        </div>
-
-        <h2 class="section-title">
-          Smart Digital Solutions For <span class="gradient-text">Real Results</span>
-        </h2>
-
-        <p class="section-subtitle">
-          End-to-end digital marketing services to help your business grow, rank higher and convert better.
-        </p>
-
-        <div class="services-grid">
-          <!-- Service Card 1 -->
-          <div class="service-card" data-service="branding">
-            <div class="service-icon-box 3d-box">
-              <img src="assets/icon_pack/4.png" alt="Branding & Identity" class="service-3d-img">
+            <!-- DYNAMIC BACKGROUND: RE-GRADED WITH PHOTO & ACCENT HUE -->
+            <div class="ec-bg-wrap" id="ecBgWrap">
+              <div class="ec-bg-layer" id="ecBgLayer">
+                <img src="" alt="" class="ec-bg-img" id="ecBgImg">
+                <div class="ec-bg-tint-color" id="ecBgTintColor"></div>
+                <div class="ec-bg-tint-multiply" id="ecBgTintMultiply"></div>
+              </div>
             </div>
-            <h3 class="service-card-title">Branding &amp; Identity</h3>
-            <p class="service-card-desc">
-              We create unique brand identities that make you stand out and stay remembered.
-            </p>
-            <button class="service-action-btn" aria-label="Learn more about Branding">
-              <i data-lucide="arrow-right"></i>
-            </button>
-          </div>
 
-          <!-- Service Card 2 -->
-          <div class="service-card" data-service="social">
-            <div class="service-icon-box 3d-box">
-              <img src="assets/icon_pack/3.png" alt="Social Media Marketing" class="service-3d-img">
-            </div>
-            <h3 class="service-card-title">Social Media Marketing</h3>
-            <p class="service-card-desc">
-              Engage your audience, build community and grow your brand across social platforms.
-            </p>
-            <button class="service-action-btn" aria-label="Learn more about Social Media">
-              <i data-lucide="arrow-right"></i>
-            </button>
-          </div>
+            <!-- EDITORIAL WASH & FILM GRAIN OVERLAYS -->
+            <div class="ec-gradient-wash"></div>
+            <div class="ec-grain-overlay"></div>
 
-          <!-- Service Card 3 -->
-          <div class="service-card" data-service="performance">
-            <div class="service-icon-box 3d-box">
-              <img src="assets/icon_pack/5.png" alt="Performance Marketing" class="service-3d-img">
+            <!-- TOP BAR WITH CONTROLS & BRANDING -->
+            <div class="ec-topbar">
+              <button type="button" class="ec-nav-btn ec-prev-btn" id="ecPrevBtn" aria-label="Previous Service">
+                <i data-lucide="arrow-left"></i> <span>PREV</span>
+              </button>
+              <div class="ec-brand-badge">
+                <span class="ec-pulse-dot"></span>
+                <span class="ec-brand-text">OUR SERVICES &amp; EXPERTISE</span>
+              </div>
+              <button type="button" class="ec-nav-btn ec-next-btn" id="ecNextBtn" aria-label="Next Service">
+                <span>NEXT</span> <i data-lucide="arrow-right"></i>
+              </button>
             </div>
-            <h3 class="service-card-title">Performance Marketing</h3>
-            <p class="service-card-desc">
-              ROI-driven ad campaigns that generate leads, sales and maximum conversions.
-            </p>
-            <button class="service-action-btn" aria-label="Learn more about Performance Marketing">
-              <i data-lucide="arrow-right"></i>
-            </button>
-          </div>
 
-          <!-- Service Card 4 -->
-          <div class="service-card" data-service="web">
-            <div class="service-icon-box 3d-box">
-              <img src="assets/icon_pack/6.png" alt="Web Development" class="service-3d-img">
-            </div>
-            <h3 class="service-card-title">Web Development</h3>
-            <p class="service-card-desc">
-              Fast, responsive and modern websites that deliver seamless user experiences.
-            </p>
-            <button class="service-action-btn" aria-label="Learn more about Web Development">
-              <i data-lucide="arrow-right"></i>
-            </button>
-          </div>
+            <!-- HEADLINE & META INFO (ALL IN A SINGLE TRANSPARENT BLUE GLASS CARD) -->
+            <div class="ec-headline-block" id="ecHeadlineBlock">
+              <div class="ec-headline-row">
+                <div class="ec-unified-glass-card" id="ecUnifiedCard">
+                  <div class="ec-card-header-line">
+                    <div class="ec-title-mask">
+                      <h3 class="ec-title-text" id="ecTitleText"></h3>
+                    </div>
+                    <div class="ec-credit-text" id="ecCreditText"></div>
+                  </div>
 
-          <!-- Service Card 5 -->
-          <div class="service-card" data-service="seo">
-            <div class="service-icon-box 3d-box">
-              <img src="assets/icon_pack/2.png" alt="SEO Optimization" class="service-3d-img">
-            </div>
-            <h3 class="service-card-title">SEO Optimization</h3>
-            <p class="service-card-desc">
-              Rank higher on search engines and get more organic traffic to your website.
-            </p>
-            <button class="service-action-btn" aria-label="Learn more about SEO">
-              <i data-lucide="arrow-right"></i>
-            </button>
-          </div>
+                  <p class="ec-highlight-desc" id="ecHighlightDesc"></p>
 
-          <!-- Service Card 6 -->
-          <div class="service-card" data-service="content">
-            <div class="service-icon-box 3d-box">
-              <img src="assets/icon_pack/7.png" alt="Content Marketing" class="service-3d-img">
+                  <div class="ec-card-meta-row">
+                    <div class="ec-stats-badge" id="ecStatsBadge"></div>
+                    <div class="ec-meta-pills" id="ecMetaPills"></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h3 class="service-card-title">Content Marketing</h3>
-            <p class="service-card-desc">
-              Powerful content that tells your story and builds trust with your audience.
-            </p>
-            <button class="service-action-btn" aria-label="Learn more about Content Marketing">
-              <i data-lucide="arrow-right"></i>
-            </button>
+
+            <!-- THE FILMSTRIP TRACK (SHARED TOP EDGE, FOCUSED CARD 3:4, NEIGHBOURS CLIPPED TO HALF) -->
+            <div class="ec-strip-viewport" id="ecStripViewport">
+              <div class="ec-strip-track" id="ecStripTrack">
+                <!-- Populated dynamically via JS -->
+              </div>
+            </div>
+
+            <!-- POSITION RAIL & COUNTER BAR -->
+            <div class="ec-rail-wrapper">
+              <div class="ec-rail-counter font-mono">
+                <span id="ecIndexCurrent">01</span>
+                <span class="ec-rail-sep">/</span>
+                <span id="ecIndexTotal">06</span>
+              </div>
+              <div class="ec-rail-track">
+                <div class="ec-rail-thumb" id="ecRailThumb"></div>
+              </div>
+              <div class="ec-gesture-hint">
+                <i data-lucide="mouse-pointer-click"></i>
+                <span>Scroll down to advance series &bull; continues to next section</span>
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
-    <!-- BOARD MEMBERS / TEAM SECTION -->
-    <section class="team-section section-padding" id="team">
-      <div class="section-bg-decor">
-        <div class="blue-pattern-grid"></div>
-        <div class="glow-sphere sphere-team"></div>
-        <div class="bg-floating-icon bg-icon-team-1 float-anim-3"><i data-lucide="users"></i></div>
-        <div class="bg-floating-icon bg-icon-team-2 float-anim-1"><i data-lucide="crown"></i></div>
-        <div class="bg-floating-icon bg-icon-team-3 float-anim-2"><i data-lucide="user-check"></i></div>
-      </div>
-
-      <div class="container text-center">
-        <div class="badge-pill center icon-pill">
-          <img src="assets/icon_pack/8.png" alt="Team Icon" class="pill-3d-icon">
-          <span>BOARD MEMBERS</span>
-        </div>
-
-        <h2 class="section-title">
-          The Leaders Behind Our <span class="gradient-text">Success</span>
-        </h2>
-
-        <div class="team-grid">
-          <!-- Member 1 -->
-          <div class="team-card" data-member="arun">
-            <div class="team-img-wrapper">
-              <img src="assets/member_arun.jpg" alt="Arun Nair" class="team-img">
-            </div>
-            <div class="team-info">
-              <h3 class="team-name">Arun Nair</h3>
-              <span class="team-role">Chairman</span>
-              <a href="https://linkedin.com" target="_blank" class="linkedin-link" aria-label="Arun Nair LinkedIn">
-                <i data-lucide="linkedin"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Member 2 -->
-          <div class="team-card" data-member="sneha">
-            <div class="team-img-wrapper">
-              <img src="assets/member_sneha.jpg" alt="Sneha Menon" class="team-img">
-            </div>
-            <div class="team-info">
-              <h3 class="team-name">Sneha Menon</h3>
-              <span class="team-role">Managing Director</span>
-              <a href="https://linkedin.com" target="_blank" class="linkedin-link" aria-label="Sneha Menon LinkedIn">
-                <i data-lucide="linkedin"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Member 3 -->
-          <div class="team-card" data-member="vishnu">
-            <div class="team-img-wrapper">
-              <img src="assets/member_vishnu.jpg" alt="Vishnu Prasad" class="team-img">
-            </div>
-            <div class="team-info">
-              <h3 class="team-name">Vishnu Prasad</h3>
-              <span class="team-role">Marketing Director</span>
-              <a href="https://linkedin.com" target="_blank" class="linkedin-link" aria-label="Vishnu Prasad LinkedIn">
-                <i data-lucide="linkedin"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Member 4 -->
-          <div class="team-card" data-member="divya">
-            <div class="team-img-wrapper">
-              <img src="assets/member_divya.jpg" alt="Divya Nair" class="team-img">
-            </div>
-            <div class="team-info">
-              <h3 class="team-name">Divya Nair</h3>
-              <span class="team-role">Operations Head</span>
-              <a href="https://linkedin.com" target="_blank" class="linkedin-link" aria-label="Divya Nair LinkedIn">
-                <i data-lucide="linkedin"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Member 5 -->
-          <div class="team-card" data-member="rohit">
-            <div class="team-img-wrapper">
-              <img src="assets/member_rohit.jpg" alt="Rohit Krishnan" class="team-img">
-            </div>
-            <div class="team-info">
-              <h3 class="team-name">Rohit Krishnan</h3>
-              <span class="team-role">Technology Head</span>
-              <a href="https://linkedin.com" target="_blank" class="linkedin-link" aria-label="Rohit Krishnan LinkedIn">
-                <i data-lucide="linkedin"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Member 6 -->
-          <div class="team-card" data-member="anjali">
-            <div class="team-img-wrapper">
-              <img src="assets/member_anjali.jpg" alt="Anjali Suresh" class="team-img">
-            </div>
-            <div class="team-info">
-              <h3 class="team-name">Anjali Suresh</h3>
-              <span class="team-role">Finance Head</span>
-              <a href="https://linkedin.com" target="_blank" class="linkedin-link" aria-label="Anjali Suresh LinkedIn">
-                <i data-lucide="linkedin"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-cta">
-          <button class="btn btn-purple btn-pill" id="viewMembersBtn">
-            View All Members <i data-lucide="arrow-up-right" class="btn-icon"></i>
-          </button>
-        </div>
-      </div>
-    </section>
 
     <!-- HOW IT WORKS SECTION -->
     <section class="process-section section-padding bg-alt" id="process">
@@ -508,6 +362,185 @@
       </div>
     </section>
 
+    <!-- BOARD MEMBERS / TEAM SECTION -->
+    <section class="team-section section-padding" id="team">
+      <div class="section-bg-decor">
+        <div class="blue-pattern-grid"></div>
+        <div class="glow-sphere sphere-team"></div>
+        <div class="bg-floating-icon bg-icon-team-1 float-anim-3"><i data-lucide="users"></i></div>
+        <div class="bg-floating-icon bg-icon-team-2 float-anim-1"><i data-lucide="crown"></i></div>
+        <div class="bg-floating-icon bg-icon-team-3 float-anim-2"><i data-lucide="user-check"></i></div>
+      </div>
+
+      <div class="container text-center">
+        <div class="badge-pill center icon-pill">
+          <img src="assets/icon_pack/8.png" alt="Team Icon" class="pill-3d-icon">
+          <span>BOARD MEMBERS</span>
+        </div>
+
+        <h2 class="section-title">
+          The Leaders Behind Our <span class="gradient-text">Success</span>
+        </h2>
+
+        <div class="team-mountain-layout">
+          <!-- TOP ROW: (1. Neeraj, 2. Nishad, 3. Nithin) -->
+          <div class="team-mountain-row team-row-peak">
+            <!-- 1. Neeraj -->
+            <div class="team-card team-card-peak" data-member="neeraj">
+              <div class="team-img-wrapper">
+                <img src="assets/BOARD MEMBERS/Neeraj.png" alt="Neeraj" class="team-img">
+              </div>
+              <div class="team-info">
+                <h3 class="team-name">Neeraj</h3>
+                <span class="team-role">Founder &amp; CEO</span>
+                <div class="team-social-row">
+                  <a href="https://www.linkedin.com/in/neeraj-sudheer-4b8528360?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                    target="_blank" class="team-social-link linkedin" aria-label="Neeraj LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                      <rect width="4" height="12" x="2" y="9"></rect>
+                      <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                  </a>
+                  <a href="https://www.instagram.com/neeraj_nrj.in?igsi=MXA1cWI2Y2RoZ3liNw==" target="_blank"
+                    class="team-social-link instagram" aria-label="Neeraj Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Nishad -->
+            <div class="team-card" data-member="nishad">
+              <div class="team-img-wrapper">
+                <img src="assets/BOARD MEMBERS/Nishad.png" alt="Nishad. S" class="team-img">
+              </div>
+              <div class="team-info">
+                <h3 class="team-name">Nishad. S</h3>
+                <span class="team-role">COO - Chief Operating Officer</span>
+              </div>
+            </div>
+
+            <!-- 3. Nithin -->
+            <div class="team-card" data-member="nithin">
+              <div class="team-img-wrapper">
+                <img src="assets/BOARD MEMBERS/nithin.png" alt="Nithin" class="team-img">
+              </div>
+              <div class="team-info">
+                <h3 class="team-name">Nithin</h3>
+                <span class="team-role">Creative Director</span>
+                <div class="team-social-row">
+                  <a href="https://www.instagram.com/nitin_graphics_designerr?igsi=MWtsNGkxbTBuemtyYw==" target="_blank"
+                    class="team-social-link instagram" aria-label="Nithin Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOTTOM ROW: (4. Vismay, 5. Sreerag, 6. Alka, 7. Parveen, 8. Anumole) -->
+          <div class="team-mountain-row team-row-base">
+            <!-- 4. Vismay -->
+            <div class="team-card" data-member="vismay">
+              <div class="team-img-wrapper">
+                <img src="assets/BOARD MEMBERS/Vismay.png" alt="Vismay" class="team-img">
+              </div>
+              <div class="team-info">
+                <h3 class="team-name">Vismay</h3>
+                <span class="team-role">CMO - Chief Marketing Officer</span>
+                <div class="team-social-row">
+                  <a href="https://www.instagram.com/v_i_s_m__a_y?igsi=MWkxcjF5bm16eWlrZw==" target="_blank"
+                    class="team-social-link instagram" aria-label="Vismay Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Sreerag -->
+            <div class="team-card" data-member="sreerag">
+              <div class="team-img-wrapper">
+                <img src="assets/BOARD MEMBERS/Sreerag.png" alt="Sreerag" class="team-img">
+              </div>
+              <div class="team-info">
+                <h3 class="team-name">Sreerag</h3>
+                <span class="team-role">Creative Head</span>
+                <div class="team-social-row">
+                  <a href="https://www.instagram.com/sreeragh.official?igsi=NWQydXB0YzI3em12" target="_blank"
+                    class="team-social-link instagram" aria-label="Sreerag Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Alka -->
+            <div class="team-card" data-member="alka">
+              <div class="team-img-wrapper">
+                <img src="assets/BOARD MEMBERS/Alka.png" alt="Alka Manoj" class="team-img">
+              </div>
+              <div class="team-info">
+                <h3 class="team-name">Alka Manoj</h3>
+                <span class="team-role">Head of Content &amp; Creative</span>
+              </div>
+            </div>
+
+            <!-- 7. Parveen -->
+            <div class="team-card" data-member="parveen">
+              <div class="team-img-wrapper">
+                <img src="assets/BOARD MEMBERS/Parveen Musthafa.png" alt="Parveen Musthafa" class="team-img">
+              </div>
+              <div class="team-info">
+                <h3 class="team-name">Parveen Musthafa</h3>
+                <span class="team-role">Marketing Manager</span>
+              </div>
+            </div>
+
+            <!-- 8. Anumole -->
+            <div class="team-card" data-member="anumole">
+              <div class="team-img-wrapper">
+                <img src="assets/BOARD MEMBERS/Anumole.png" alt="Anumole A" class="team-img">
+              </div>
+              <div class="team-info">
+                <h3 class="team-name">Anumole A</h3>
+                <span class="team-role">Mentor &amp; Strategic Advisor</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-cta">
+          <button class="btn btn-purple btn-pill" id="viewMembersBtn">
+            View All Members <i data-lucide="arrow-up-right" class="btn-icon"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+
     <!-- CONTACT US SECTION -->
     <section class="contact-section section-padding" id="contact">
       <div class="section-bg-decor">
@@ -541,9 +574,9 @@
                 <img src="assets/icon_pack/1.png" alt="Phone Icon" class="info-3d-img">
               </div>
               <div class="info-text">
-                <span class="info-label">Phone</span>
-                <a href="tel:+919876543210" class="info-val">+91 98765 43210</a>
-                <a href="tel:+918765432109" class="info-val">+91 87654 32109</a>
+                <span class="info-label">Phone &amp; WhatsApp</span>
+                <a href="tel:+919746730297" class="info-val">+91 97467 30297 (Call)</a>
+                <a href="https://wa.me/918139860663" target="_blank" class="info-val">+91 81398 60663 (WhatsApp)</a>
               </div>
             </div>
 
@@ -553,7 +586,7 @@
               </div>
               <div class="info-text">
                 <span class="info-label">Email</span>
-                <a href="mailto:hello@trendads.com" class="info-val">hello@trendads.com</a>
+                <a href="mailto:trendads.in@gmail.com" class="info-val">trendads.in@gmail.com</a>
               </div>
             </div>
 
@@ -563,7 +596,7 @@
               </div>
               <div class="info-text">
                 <span class="info-label">Location</span>
-                <span class="info-val font-medium">Kochi, Kerala, India</span>
+                <span class="info-val font-medium">Thrissur, Kerala, India</span>
               </div>
             </div>
 
@@ -624,17 +657,29 @@
     <div class="container footer-container">
       <div class="footer-brand">
         <a href="#home" class="logo" aria-label="TrendAds Home">
-          <img src="assets/logo.png" alt="TrendAds Logo" class="footer-logo-img">
+          <img src="assets/logo.png" alt="TrendAds Logo" class="header-logo-img">
         </a>
         <p class="footer-tagline">
           Empowering brands through data-driven digital strategies, innovative marketing campaigns, and cutting-edge web
           solutions.
         </p>
         <div class="footer-socials">
-          <a href="#" class="social-icon"><i data-lucide="facebook"></i></a>
-          <a href="#" class="social-icon"><i data-lucide="instagram"></i></a>
-          <a href="#" class="social-icon"><i data-lucide="linkedin"></i></a>
-          <a href="#" class="social-icon"><i data-lucide="twitter"></i></a>
+          <a href="https://www.instagram.com/trend_ads.in?igsi=Mjh1YTd4Y2c2eHcy" target="_blank" rel="noopener noreferrer"
+            class="social-icon social-instagram" aria-label="TrendAds Instagram" title="Follow us on Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/share/19LfTQbxNp/" target="_blank" rel="noopener noreferrer"
+            class="social-icon social-facebook" aria-label="TrendAds Facebook" title="Follow us on Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+          </a>
         </div>
       </div>
 
@@ -661,17 +706,6 @@
           <li><a href="#services">Content Marketing</a></li>
         </ul>
       </div>
-
-      <div class="footer-newsletter">
-        <h4 class="footer-title">Stay Updated</h4>
-        <p class="footer-desc">Subscribe to our newsletter to receive growth insights &amp; industry trends.</p>
-        <form class="newsletter-form" id="newsletterForm">
-          <input type="email" placeholder="Enter your email" required class="newsletter-input">
-          <button type="submit" class="btn btn-primary btn-icon-only">
-            <i data-lucide="arrow-right"></i>
-          </button>
-        </form>
-      </div>
     </div>
 
     <div class="footer-bottom">
@@ -695,11 +729,30 @@
     </div>
   </div>
 
+  <!-- FLOATING QUICK CONTACT BUTTONS (BOTTOM-RIGHT) -->
+  <div class="floating-contact-wrapper" id="floatingContactWrapper">
+    <!-- Call Button -->
+    <a href="tel:+919746730297" class="floating-btn floating-call-btn" aria-label="Call Us Now" title="Call Us (+91 97467 30297)">
+      <div class="floating-pulse-ring ring-call"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      </svg>
+      <span class="floating-tooltip">Call Now</span>
+    </a>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/918139860663?text=Hi%20TrendAds%20team,%20I'd%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="floating-btn floating-wa-btn" aria-label="Chat on WhatsApp" title="Chat on WhatsApp (+91 81398 60663)">
+      <div class="floating-pulse-ring ring-wa"></div>
+      <img src="whtsapp icon.png" alt="WhatsApp" class="floating-wa-img">
+      <span class="floating-tooltip">WhatsApp</span>
+    </a>
+  </div>
+
   <!-- TOAST NOTIFICATION CONTAINER -->
   <div class="toast-container" id="toastContainer"></div>
 
   <!-- Custom JavaScript -->
-  <script src="script.js"></script>
+  <script src="script.js?v=42"></script>
 </body>
 
 </html>
