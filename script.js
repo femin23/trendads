@@ -789,7 +789,7 @@ document.addEventListener('DOMContentLoaded', () => {
       bio: "Directs operational workflows, cross-functional delivery frameworks, quality assurance, and organizational growth systems." 
     },
     vismay: { 
-      name: "Vismay", 
+      name: "Vismay V J", 
       role: "CMO - Chief Marketing Officer", 
       img: "assets/BOARD MEMBERS/Vismay.png", 
       bio: "Spearheads omnichannel growth, performance marketing engines, media buying campaigns, and global brand equity." 
