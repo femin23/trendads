@@ -2233,13 +2233,13 @@ section {
     width: 100%;
   }
   .ec-nav-btn {
-    padding: 5px 12px;
-    font-size: 0.72rem;
+    padding: 6px 14px;
+    font-size: 0.78rem;
     gap: 6px;
   }
   .ec-brand-badge {
-    padding: 5px 12px;
-    font-size: 0.72rem;
+    padding: 6px 14px;
+    font-size: 0.78rem;
     gap: 6px;
   }
   .ec-headline-block {
@@ -2247,7 +2247,7 @@ section {
     right: 8px;
     width: auto;
     max-width: none;
-    top: 48px;
+    top: 50px;
   }
   .ec-headline-row {
     justify-content: center;
@@ -2256,31 +2256,34 @@ section {
   .ec-unified-glass-card {
     width: 100%;
     max-width: 100%;
-    padding: 10px 14px;
-    border-radius: 16px;
-    gap: 6px;
+    padding: 12px 16px;
+    border-radius: 18px;
+    gap: 8px;
     align-items: center;
     text-align: center;
   }
   .ec-card-header-line {
     align-items: center;
     text-align: center;
+    gap: 4px;
   }
   .ec-title-mask {
     text-align: center;
   }
   .ec-title-text {
-    font-size: clamp(1.3rem, 5.2vw, 1.6rem);
-    line-height: 1.1;
+    font-size: clamp(1.45rem, 6vw, 1.85rem);
+    line-height: 1.12;
     text-align: center;
   }
   .ec-credit-text {
-    font-size: 0.68rem;
-    padding: 3px 10px;
+    font-size: 0.75rem;
+    padding: 4px 12px;
+    font-weight: 700;
   }
   .ec-highlight-desc {
-    font-size: clamp(0.82rem, 3.2vw, 0.92rem);
-    line-height: 1.4;
+    font-size: clamp(0.95rem, 3.8vw, 1.05rem);
+    line-height: 1.45;
+    font-weight: 600;
     text-align: center;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -2295,15 +2298,17 @@ section {
     flex-wrap: wrap;
   }
   .ec-stats-badge {
-    font-size: 0.68rem;
-    padding: 4px 10px;
+    font-size: 0.76rem;
+    padding: 5px 12px;
+    font-weight: 700;
   }
   .ec-meta-pill {
-    font-size: 0.68rem;
-    padding: 4px 10px;
+    font-size: 0.76rem;
+    padding: 5px 12px;
+    font-weight: 600;
   }
   .ec-strip-viewport {
-    top: 50%;
+    top: 51%;
   }
   .ec-rail-wrapper {
     left: 14px;
@@ -2336,22 +2341,22 @@ section {
     width: 100%;
   }
   .ec-nav-btn {
-    padding: 4px 8px;
-    font-size: 0.66rem;
+    padding: 5px 10px;
+    font-size: 0.72rem;
   }
   .ec-brand-badge {
-    padding: 4px 8px;
-    font-size: 0.64rem;
+    padding: 5px 10px;
+    font-size: 0.72rem;
   }
   .ec-brand-badge span {
-    font-size: 0.64rem;
+    font-size: 0.72rem;
   }
   .ec-headline-block {
     left: 8px;
     right: 8px;
     width: auto;
     max-width: none;
-    top: 42px;
+    top: 44px;
   }
   .ec-headline-row {
     justify-content: center;
@@ -2360,62 +2365,68 @@ section {
   .ec-unified-glass-card {
     width: 100%;
     max-width: 100%;
-    padding: 10px 12px;
-    border-radius: 14px;
-    gap: 5px;
+    padding: 12px 14px;
+    border-radius: 16px;
+    gap: 6px;
     align-items: center;
     text-align: center;
   }
   .ec-card-header-line {
     align-items: center;
     text-align: center;
+    gap: 4px;
   }
   .ec-title-mask {
     text-align: center;
   }
   .ec-title-text {
-    font-size: clamp(1.22rem, 5.5vw, 1.48rem);
+    font-size: clamp(1.38rem, 6.5vw, 1.7rem);
     text-align: center;
+    font-weight: 800;
   }
   .ec-credit-text {
-    font-size: 0.64rem;
-    padding: 2px 8px;
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    font-weight: 700;
   }
   .ec-highlight-desc {
-    font-size: 0.84rem;
-    line-height: 1.35;
+    font-size: 0.94rem;
+    line-height: 1.42;
+    font-weight: 600;
     text-align: center;
     -webkit-line-clamp: 3;
   }
   .ec-card-meta-row {
     justify-content: center;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
     flex-wrap: wrap;
   }
   .ec-stats-badge {
-    font-size: 0.64rem;
-    padding: 3px 8px;
+    font-size: 0.74rem;
+    padding: 4px 10px;
+    font-weight: 700;
   }
   .ec-meta-pill {
-    font-size: 0.64rem;
-    padding: 3px 8px;
+    font-size: 0.74rem;
+    padding: 4px 10px;
+    font-weight: 600;
   }
   .ec-strip-viewport {
-    top: 52%;
+    top: 53%;
   }
   .ec-card-item {
     border-radius: 16px;
   }
   .ec-card-badge {
-    padding: 6px 10px;
+    padding: 6px 12px;
   }
   .ec-card-badge-title {
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     font-weight: 700;
   }
   .ec-card-badge-num {
-    font-size: 0.72rem;
+    font-size: 0.78rem;
     font-weight: 800;
   }
   .ec-rail-wrapper {
