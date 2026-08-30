@@ -2704,6 +2704,21 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+  padding: 10px 10px 14px 10px;
+  border-radius: 18px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  outline: none;
+}
+
+.process-step:focus-visible {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.4);
+}
+
+.process-step:hover {
+  background: rgba(37, 99, 235, 0.04);
+  transform: translateY(-4px);
 }
 
 .step-icon-circle {
@@ -2736,11 +2751,11 @@ section {
 }
 
 .process-step:hover .step-icon-circle {
-  transform: scale(1.08);
+  transform: scale(1.12);
 }
 
 .process-step:hover .step-3d-img {
-  transform: scale(1.12) rotate(4deg);
+  transform: scale(1.15) rotate(6deg);
 }
 
 .blue-glow { color: var(--primary); box-shadow: 0 8px 22px rgba(37, 99, 235, 0.18); }

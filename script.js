@@ -842,6 +842,122 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // 5.2 Process Step Interactive Modal Details
+  const processStepDetails = {
+    '1': {
+      num: '01',
+      title: 'Discover & Strategic Audit',
+      badge: 'Step 01 • Business & Market Discovery',
+      accentColor: '#2563eb',
+      accentBg: 'rgba(37, 99, 235, 0.1)',
+      img: 'assets/icon_pack/5.png',
+      desc: 'Before launching any campaign, we immerse ourselves in your business ecosystem. We analyze your brand identity, current performance bottlenecks, competitors, and exact customer buying journey to build an unbeatable strategic foundation.',
+      deliverables: [
+        'Comprehensive Brand & Digital Footprint Audit',
+        'Competitor Landscape & Market Gap Analysis',
+        'Ideal Customer Profile (ICP) & Intent Mapping',
+        'Clear Growth KPIs, Milestones & Timeline Plan'
+      ]
+    },
+    '2': {
+      num: '02',
+      title: 'Strategic Planning & Campaign Architecture',
+      badge: 'Step 02 • Tailored Growth Strategy',
+      accentColor: '#10b981',
+      accentBg: 'rgba(16, 185, 129, 0.1)',
+      img: 'assets/icon_pack/4.png',
+      desc: 'We architect an omnichannel, high-converting digital blueprint engineered specifically for your business goals. Every channel, creative asset, and dollar spent is planned with mathematical precision for maximum ROI.',
+      deliverables: [
+        'Custom Conversion Funnel & Wireframe Strategy',
+        'High-Converting Ad Angles & Content Calendar',
+        'Omnichannel Selection: Meta, Google, SEO & Web',
+        'ROI Projections, Budget Split & Target ROAS'
+      ]
+    },
+    '3': {
+      num: '03',
+      title: 'Precision Execution & Creative Launch',
+      badge: 'Step 03 • Creative & Technical Launch',
+      accentColor: '#f97316',
+      accentBg: 'rgba(249, 115, 22, 0.1)',
+      img: 'assets/icon_pack/6.png',
+      desc: 'Our specialist creative and tech team deploys lightning-fast web applications, high-converting ad visuals, compelling copywriting, and enterprise-grade tracking systems ready for rapid launch.',
+      deliverables: [
+        'Custom Web & Landing Page Development',
+        'High-Impact Graphic Design, Video Ads & Ad Copy',
+        'Server-Side Tracking: GA4, Meta CAPI & Pixel Setup',
+        'Multivariate A/B Testing & Audience Setup'
+      ]
+    },
+    '4': {
+      num: '04',
+      title: 'Performance Analysis & Exponential Scaling',
+      badge: 'Step 04 • Optimization & Scaling',
+      accentColor: '#ec4899',
+      accentBg: 'rgba(236, 72, 153, 0.1)',
+      img: 'assets/icon_pack/3.png',
+      desc: 'Launch is just day one. We continuously analyze real-time conversion metrics, eliminate ad waste, optimize conversion rates, and aggressively scale profitable campaigns to dominate your market.',
+      deliverables: [
+        'Daily Bid & Budget Optimization for Highest ROAS',
+        'Conversion Rate Optimization (CRO) & Heatmap Tuning',
+        'Transparent Weekly & Monthly ROI Reporting',
+        'Aggressive Scaling of Winning Ad Creatives & Channels'
+      ]
+    }
+  };
+
+  const processSteps = document.querySelectorAll('.process-step');
+  processSteps.forEach((stepEl) => {
+    stepEl.addEventListener('click', () => {
+      const stepKey = stepEl.getAttribute('data-step') || '1';
+      const step = processStepDetails[stepKey];
+      if (step) {
+        const stepHtml = `
+          <div style="text-align: center; padding: 10px 0;">
+            <div style="width: 80px; height: 80px; margin: 0 auto 16px auto; border-radius: 50%; background: ${step.accentBg}; border: 3px solid ${step.accentColor}; display: flex; align-items: center; justify-content: center; padding: 14px; box-shadow: 0 12px 28px rgba(0,0,0,0.12);">
+              <img src="${step.img}" alt="${step.title}" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <span style="display: inline-block; font-size: 0.8rem; color: ${step.accentColor}; font-weight: 800; background: ${step.accentBg}; padding: 5px 16px; border-radius: 999px; margin-bottom: 12px; font-family: var(--font-heading); letter-spacing: 0.05em;">
+              ${step.badge}
+            </span>
+            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; color: var(--text-dark); line-height: 1.25;">
+              ${step.title}
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; max-width: 480px; margin-left: auto; margin-right: auto; text-align: center;">
+              ${step.desc}
+            </p>
+            
+            <div style="text-align: left; background: var(--bg-alt); padding: 16px 20px; border-radius: 16px; border: 1px solid rgba(226, 232, 240, 0.9); margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto;">
+              <h4 style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 800; color: var(--text-dark); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.06em;">
+                Key Actions &amp; Deliverables:
+              </h4>
+              <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+                ${step.deliverables.map(d => `
+                  <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.88rem; color: var(--text-dark); line-height: 1.4;">
+                    <span style="color: ${step.accentColor}; font-weight: 800; font-size: 1rem; line-height: 1;">✓</span>
+                    <span>${d}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+
+            <a href="#contact" onclick="document.getElementById('infoModal').classList.remove('active')" class="btn btn-primary btn-pill">
+              Start This Process <i data-lucide="arrow-right" class="btn-icon"></i>
+            </a>
+          </div>
+        `;
+        openModal(stepHtml);
+      }
+    });
+
+    stepEl.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        stepEl.click();
+      }
+    });
+  });
+
   const viewMembersBtn = document.getElementById('viewMembersBtn');
   if (viewMembersBtn) {
     viewMembersBtn.addEventListener('click', () => {
