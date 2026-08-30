@@ -3206,6 +3206,44 @@ section {
 }
 
 @media (max-width: 768px) {
+  /* HIDE ALL HERO BACKGROUND ANIMATIONS & DECORATIONS ON MOBILE - ONLY SHOW CLEAN BANNER IMAGE */
+  .hero-fluid-canvas,
+  .hero-bg-decor,
+  .hero-section .section-bg-decor,
+  .hero-section .bg-floating-icon,
+  .hero-section .glow-sphere,
+  .hero-section .blue-pattern-dots {
+    display: none !important;
+  }
+
+  .hero-section.hero-layout-canvas {
+    min-height: auto !important;
+    padding-top: calc(var(--header-height) + 10px) !important;
+    padding-bottom: 20px !important;
+    background: transparent !important;
+  }
+
+  .hero-layout-container {
+    min-height: auto !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .hero-image-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 6px !important;
+  }
+
+  .hero-main-banner-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: contain !important;
+    filter: none !important;
+  }
+
   .about-visual {
     display: none !important;
   }

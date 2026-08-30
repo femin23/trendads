@@ -95,6 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
     handleResize();
 
     const render = () => {
+      if (window.innerWidth < 768) {
+        animationFrameId = requestAnimationFrame(render);
+        return;
+      }
       time += 0.008;
 
       // Mouse smooth interpolation
