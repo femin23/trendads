@@ -1649,12 +1649,20 @@ section {
   border-radius: var(--radius-pill);
   border: 1px solid var(--card-border);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-  transition: var(--transition);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+}
+
+.feature-card:focus-visible {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
 }
 
 .feature-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+  transform: translateY(-4px);
+  border-color: rgba(37, 99, 235, 0.3);
+  box-shadow: 0 12px 28px rgba(37, 99, 235, 0.12);
 }
 
 .feature-icon-wrapper {

@@ -962,6 +962,118 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // 5.3 About Us Feature Cards Interactive Modal Details
+  const aboutFeatureDetails = {
+    'results': {
+      title: 'Results-Driven Strategies',
+      badge: 'Why Choose TrendAds • Performance Focus',
+      accentColor: '#2563eb',
+      accentBg: 'rgba(37, 99, 235, 0.1)',
+      img: 'assets/icon_pack/5.png',
+      desc: 'We prioritize tangible business outcomes over vanity metrics. Every marketing campaign, digital ad, and custom web application we build is strictly aligned with your target revenue, quality lead generation, and long-term business scalability.',
+      deliverables: [
+        'Clear ROI milestones and revenue targets defined upfront',
+        'Full-funnel customer acquisition tracking & attribution',
+        'Continuous Conversion Rate Optimization (CRO)',
+        'Transparent weekly & monthly ROI performance reports'
+      ]
+    },
+    'team': {
+      title: 'Creative & Experienced Team',
+      badge: 'Our Core Strength • Industry Experts',
+      accentColor: '#8b5cf6',
+      accentBg: 'rgba(139, 92, 246, 0.1)',
+      img: 'assets/icon_pack/8.png',
+      desc: 'Our team unites award-winning creative directors, full-stack web developers, certified Meta & Google ad specialists, and high-conversion copywriters with proven experience across diverse industries.',
+      deliverables: [
+        'Dedicated multidisciplinary specialists for your brand',
+        'High-converting visual designs, motion graphics & video ads',
+        'Next-generation responsive UI/UX and web app development',
+        'Direct access to campaign strategists & senior project leads'
+      ]
+    },
+    'data': {
+      title: 'Data-Backed Decisions',
+      badge: 'Precision Engineering • Analytics & Insight',
+      accentColor: '#10b981',
+      accentBg: 'rgba(16, 185, 129, 0.1)',
+      img: 'assets/icon_pack/4.png',
+      desc: 'No guesswork, no intuition-only marketing. We utilize advanced web analytics, server-side tracking (GA4, CAPI), heatmaps, and continuous multivariate A/B testing to optimize your ad spend with mathematical precision.',
+      deliverables: [
+        'Real-time conversion tracking & custom attribution modeling',
+        'Deep competitor intelligence & market gap analysis',
+        'User session recordings & conversion friction elimination',
+        'Budget allocation steered by actual customer Lifetime Value (LTV)'
+      ]
+    },
+    'client': {
+      title: 'Client-First Approach',
+      badge: 'Client Partnership • Dedicated Support',
+      accentColor: '#f97316',
+      accentBg: 'rgba(249, 115, 22, 0.1)',
+      img: 'assets/icon_pack/1.png',
+      desc: 'We treat your business as our own. We maintain open communication channels, provide honest strategic guidance, offer flexible scaling options, and guarantee rapid turnarounds on all creative and technical requests.',
+      deliverables: [
+        'Fast WhatsApp & Email priority responses',
+        'Customized growth strategies tailored to your exact budget',
+        '100% full ownership of all creative assets and accounts',
+        'Honest consulting and proactive quarterly growth roadmaps'
+      ]
+    }
+  };
+
+  const featureCards = document.querySelectorAll('.feature-card');
+  featureCards.forEach((cardEl) => {
+    cardEl.addEventListener('click', () => {
+      const featKey = cardEl.getAttribute('data-feature');
+      const feat = aboutFeatureDetails[featKey];
+      if (feat) {
+        const featHtml = `
+          <div style="text-align: center; padding: 4px 0;">
+            <div style="width: 68px; height: 68px; margin: 0 auto 12px auto; border-radius: 50%; background: ${feat.accentBg}; border: 3px solid ${feat.accentColor}; display: flex; align-items: center; justify-content: center; padding: 12px; box-shadow: 0 10px 24px rgba(0,0,0,0.1);">
+              <img src="${feat.img}" alt="${feat.title}" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <span style="display: inline-block; font-size: 0.75rem; color: ${feat.accentColor}; font-weight: 800; background: ${feat.accentBg}; padding: 4px 14px; border-radius: 999px; margin-bottom: 10px; font-family: var(--font-heading); letter-spacing: 0.04em;">
+              ${feat.badge}
+            </span>
+            <h3 style="font-family: var(--font-heading); font-size: clamp(1.25rem, 5vw, 1.45rem); font-weight: 800; margin-bottom: 10px; color: var(--text-dark); line-height: 1.25;">
+              ${feat.title}
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.55; margin-bottom: 16px; max-width: 460px; margin-left: auto; margin-right: auto; text-align: center;">
+              ${feat.desc}
+            </p>
+            
+            <div style="text-align: left; background: var(--bg-alt); padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(226, 232, 240, 0.9); margin-bottom: 20px; max-width: 460px; margin-left: auto; margin-right: auto;">
+              <h4 style="font-family: var(--font-heading); font-size: 0.82rem; font-weight: 800; color: var(--text-dark); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">
+                What Sets Us Apart:
+              </h4>
+              <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px;">
+                ${feat.deliverables.map(d => `
+                  <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.84rem; color: var(--text-dark); line-height: 1.35;">
+                    <span style="color: ${feat.accentColor}; font-weight: 800; font-size: 0.95rem; line-height: 1;">✓</span>
+                    <span>${d}</span>
+                  </li>
+                `).join('')}
+              </ul>
+            </div>
+
+            <a href="#contact" onclick="document.getElementById('infoModal').classList.remove('active')" class="btn btn-primary btn-pill btn-block" style="max-width: 280px; margin: 0 auto; justify-content: center;">
+              Partner With Us <i data-lucide="arrow-right" class="btn-icon"></i>
+            </a>
+          </div>
+        `;
+        openModal(featHtml);
+      }
+    });
+
+    cardEl.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        cardEl.click();
+      }
+    });
+  });
+
   const viewMembersBtn = document.getElementById('viewMembersBtn');
   if (viewMembersBtn) {
     viewMembersBtn.addEventListener('click', () => {
