@@ -795,7 +795,7 @@ document.addEventListener('DOMContentLoaded', () => {
       bio: "Spearheads omnichannel growth, performance marketing engines, media buying campaigns, and global brand equity." 
     },
     nithin: { 
-      name: "Nithin", 
+      name: "Nithin Kumar K S", 
       role: "Creative Director", 
       img: "assets/BOARD MEMBERS/nithin.png", 
       bio: "Leads artistic vision, high-concept brand aesthetics, multi-platform design direction, and visual storytelling." 
@@ -807,7 +807,7 @@ document.addEventListener('DOMContentLoaded', () => {
       bio: "Drives content architecture, creative storytelling, multimedia production, and engaging viral brand narratives." 
     },
     sreerag: { 
-      name: "Sreerag", 
+      name: "Sreerag P.P", 
       role: "Creative Head", 
       img: "assets/BOARD MEMBERS/Sreerag.png", 
       bio: "Crafts breakthrough visual identities, experiential graphic designs, UI assets, and creative campaign systems." 
