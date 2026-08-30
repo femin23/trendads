@@ -19,7 +19,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=57">
+  <link rel="stylesheet" href="style.css?v=58">
 
   <!-- Preload Assets -->
   <link rel="preload" href="assets/logo.png" as="image">
@@ -103,10 +103,13 @@
       </div>
 
       <div class="container hero-layout-container">
-        <!-- HERO MAIN BANNER IMAGE -->
+        <!-- HERO MAIN BANNER IMAGE (DESKTOP & MOBILE RESPONSIVE) -->
         <div class="hero-image-wrapper">
-          <img src="assets/hero.png" alt="TrendAds - Branding, Digital Marketing, Web Development"
-            class="hero-main-banner-img">
+          <picture class="hero-banner-picture">
+            <source media="(max-width: 768px)" srcset="assets/hero_moblie_banner.png">
+            <img src="assets/hero.png" alt="TrendAds - Branding, Digital Marketing, Web Development"
+              class="hero-main-banner-img">
+          </picture>
         </div>
       </div>
     </section>
@@ -774,7 +777,7 @@
   <div class="toast-container" id="toastContainer"></div>
 
   <!-- Custom JavaScript -->
-  <script src="script.js?v=57"></script>
+  <script src="script.js?v=58"></script>
 </body>
 
 </html>

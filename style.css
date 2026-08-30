@@ -857,6 +857,13 @@ section {
   padding: 10px;
 }
 
+.hero-banner-picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
 .hero-main-banner-img {
   width: 100%;
   max-width: 1050px;
