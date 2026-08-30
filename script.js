@@ -771,7 +771,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 5. Board Member Data & Modal Handling
   const boardMemberDetails = {
     neeraj: { 
-      name: "Neeraj", 
+      name: "Neeraj Sudheer", 
       role: "Founder & CEO", 
       img: "assets/BOARD MEMBERS/Neeraj.png", 
       bio: "Visionary founder steering TrendAds with strategic foresight, brand innovation, and exponential digital transformation architectures." 
