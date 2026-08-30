@@ -497,7 +497,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="ec-card-dim"></span>
           <div class="ec-card-badge">
             <span class="ec-card-badge-title">${item.title.replace(/\n/g, ' ')}</span>
-            <span class="ec-card-badge-num">0${i + 1}</span>
           </div>
         `;
 

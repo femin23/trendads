@@ -2110,7 +2110,8 @@ section {
   right: 14px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
   padding: 8px 14px;
   background: rgba(9, 13, 22, 0.85);
   backdrop-filter: blur(12px);
@@ -2122,19 +2123,14 @@ section {
 
 .ec-card-badge-title {
   font-family: var(--font-heading);
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   font-weight: 700;
   color: #ffffff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.ec-card-badge-num {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--primary-light, #93c5fd);
+  text-align: center;
+  width: 100%;
 }
 
 /* POSITION RAIL & COUNTER BAR */
@@ -2432,14 +2428,13 @@ section {
   }
   .ec-card-badge {
     padding: 6px 12px;
+    justify-content: center;
+    text-align: center;
   }
   .ec-card-badge-title {
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     font-weight: 700;
-  }
-  .ec-card-badge-num {
-    font-size: 0.78rem;
-    font-weight: 800;
+    text-align: center;
   }
   .ec-rail-wrapper {
     left: 10px;
