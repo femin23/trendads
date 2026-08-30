@@ -795,7 +795,7 @@ document.addEventListener('DOMContentLoaded', () => {
       bio: "Spearheads omnichannel growth, performance marketing engines, media buying campaigns, and global brand equity." 
     },
     nithin: { 
-      name: "Nithin Kumar K S", 
+      name: "Nithinkumar ks", 
       role: "Creative Director", 
       img: "assets/BOARD MEMBERS/nithin.png", 
       bio: "Leads artistic vision, high-concept brand aesthetics, multi-platform design direction, and visual storytelling." 
