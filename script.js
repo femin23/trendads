@@ -456,17 +456,18 @@ document.addEventListener('DOMContentLoaded', () => {
       const isTablet = boxWidth < 992;
 
       if (isMobile) {
-        fullH = Math.min(250, Math.max(160, Math.round(boxHeight * 0.30)));
-        halfH = Math.round(fullH * 0.52);
-        cardW = Math.round(fullH * 0.72);
-        gap = 10;
-      } else if (isTablet) {
-        fullH = Math.min(320, Math.max(210, Math.round(boxHeight * 0.35)));
-        halfH = Math.round(fullH * 0.52);
-        cardW = Math.round(fullH * 0.74);
+        // Significantly larger, prominent mobile cards
+        cardW = Math.min(270, Math.max(200, Math.round(boxWidth * 0.58)));
+        fullH = Math.round(cardW * 1.30);
+        halfH = Math.round(fullH * 0.60);
         gap = 14;
+      } else if (isTablet) {
+        fullH = Math.min(360, Math.max(240, Math.round(boxHeight * 0.38)));
+        halfH = Math.round(fullH * 0.54);
+        cardW = Math.round(fullH * 0.74);
+        gap = 16;
       } else {
-        fullH = Math.min(410, Math.max(250, Math.round(boxHeight * 0.40)));
+        fullH = Math.min(420, Math.max(270, Math.round(boxHeight * 0.42)));
         halfH = Math.round(fullH * 0.52);
         cardW = Math.round(fullH * 0.75);
         gap = Math.max(16, Math.round(cardW * 0.08));

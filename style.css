@@ -2217,14 +2217,20 @@ section {
     height: 360vh;
   }
   .services-section {
-    padding: 8px 8px;
+    padding: 6px 6px;
+    width: 100%;
+    max-width: 100vw;
   }
   .ec-container {
     border-radius: 18px;
+    width: 100%;
   }
   .ec-topbar {
     top: 10px;
-    padding: 0 12px;
+    left: 0;
+    right: 0;
+    padding: 0 10px;
+    width: 100%;
   }
   .ec-nav-btn {
     padding: 5px 12px;
@@ -2237,11 +2243,14 @@ section {
     gap: 6px;
   }
   .ec-headline-block {
-    left: 12px;
+    left: 8px;
+    right: 8px;
+    width: auto;
+    max-width: none;
     top: 48px;
-    max-width: calc(100% - 24px);
   }
   .ec-unified-glass-card {
+    width: 100%;
     max-width: 100%;
     padding: 8px 12px;
     border-radius: 14px;
@@ -2276,7 +2285,7 @@ section {
     padding: 3px 8px;
   }
   .ec-strip-viewport {
-    top: 53%;
+    top: 50%;
   }
   .ec-rail-wrapper {
     left: 14px;
@@ -2293,32 +2302,42 @@ section {
 
 @media (max-width: 480px) {
   .services-section {
-    padding: 6px 6px;
+    padding: 4px 4px;
+    width: 100%;
+    max-width: 100vw;
   }
   .ec-container {
     border-radius: 14px;
+    width: 100%;
   }
   .ec-topbar {
     top: 8px;
-    padding: 0 8px;
+    left: 0;
+    right: 0;
+    padding: 0 6px;
+    width: 100%;
   }
   .ec-nav-btn {
     padding: 4px 8px;
     font-size: 0.66rem;
   }
   .ec-brand-badge {
-    padding: 4px 10px;
-    font-size: 0.66rem;
+    padding: 4px 8px;
+    font-size: 0.64rem;
   }
   .ec-brand-badge span {
-    font-size: 0.66rem;
+    font-size: 0.64rem;
   }
   .ec-headline-block {
-    left: 8px;
+    left: 6px;
+    right: 6px;
+    width: auto;
+    max-width: none;
     top: 42px;
-    max-width: calc(100% - 16px);
   }
   .ec-unified-glass-card {
+    width: 100%;
+    max-width: 100%;
     padding: 8px 10px;
     border-radius: 12px;
     gap: 4px;
@@ -2344,19 +2363,21 @@ section {
     padding: 2px 6px;
   }
   .ec-strip-viewport {
-    top: 55%;
+    top: 51%;
   }
   .ec-card-item {
-    border-radius: 14px;
+    border-radius: 16px;
   }
   .ec-card-badge {
-    padding: 5px 8px;
+    padding: 6px 10px;
   }
   .ec-card-badge-title {
-    font-size: 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 700;
   }
   .ec-card-badge-num {
-    font-size: 0.65rem;
+    font-size: 0.72rem;
+    font-weight: 800;
   }
   .ec-rail-wrapper {
     left: 10px;
