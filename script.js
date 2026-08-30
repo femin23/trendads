@@ -917,35 +917,35 @@ document.addEventListener('DOMContentLoaded', () => {
       const step = processStepDetails[stepKey];
       if (step) {
         const stepHtml = `
-          <div style="text-align: center; padding: 10px 0;">
-            <div style="width: 80px; height: 80px; margin: 0 auto 16px auto; border-radius: 50%; background: ${step.accentBg}; border: 3px solid ${step.accentColor}; display: flex; align-items: center; justify-content: center; padding: 14px; box-shadow: 0 12px 28px rgba(0,0,0,0.12);">
+          <div style="text-align: center; padding: 4px 0;">
+            <div style="width: 68px; height: 68px; margin: 0 auto 12px auto; border-radius: 50%; background: ${step.accentBg}; border: 3px solid ${step.accentColor}; display: flex; align-items: center; justify-content: center; padding: 12px; box-shadow: 0 10px 24px rgba(0,0,0,0.1);">
               <img src="${step.img}" alt="${step.title}" style="width: 100%; height: 100%; object-fit: contain;">
             </div>
-            <span style="display: inline-block; font-size: 0.8rem; color: ${step.accentColor}; font-weight: 800; background: ${step.accentBg}; padding: 5px 16px; border-radius: 999px; margin-bottom: 12px; font-family: var(--font-heading); letter-spacing: 0.05em;">
+            <span style="display: inline-block; font-size: 0.75rem; color: ${step.accentColor}; font-weight: 800; background: ${step.accentBg}; padding: 4px 14px; border-radius: 999px; margin-bottom: 10px; font-family: var(--font-heading); letter-spacing: 0.04em;">
               ${step.badge}
             </span>
-            <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800; margin-bottom: 12px; color: var(--text-dark); line-height: 1.25;">
+            <h3 style="font-family: var(--font-heading); font-size: clamp(1.25rem, 5vw, 1.45rem); font-weight: 800; margin-bottom: 10px; color: var(--text-dark); line-height: 1.25;">
               ${step.title}
             </h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; max-width: 480px; margin-left: auto; margin-right: auto; text-align: center;">
+            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.55; margin-bottom: 16px; max-width: 460px; margin-left: auto; margin-right: auto; text-align: center;">
               ${step.desc}
             </p>
             
-            <div style="text-align: left; background: var(--bg-alt); padding: 16px 20px; border-radius: 16px; border: 1px solid rgba(226, 232, 240, 0.9); margin-bottom: 24px; max-width: 480px; margin-left: auto; margin-right: auto;">
-              <h4 style="font-family: var(--font-heading); font-size: 0.88rem; font-weight: 800; color: var(--text-dark); margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.06em;">
+            <div style="text-align: left; background: var(--bg-alt); padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(226, 232, 240, 0.9); margin-bottom: 20px; max-width: 460px; margin-left: auto; margin-right: auto;">
+              <h4 style="font-family: var(--font-heading); font-size: 0.82rem; font-weight: 800; color: var(--text-dark); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">
                 Key Actions &amp; Deliverables:
               </h4>
-              <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+              <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 7px;">
                 ${step.deliverables.map(d => `
-                  <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.88rem; color: var(--text-dark); line-height: 1.4;">
-                    <span style="color: ${step.accentColor}; font-weight: 800; font-size: 1rem; line-height: 1;">✓</span>
+                  <li style="display: flex; align-items: flex-start; gap: 8px; font-size: 0.84rem; color: var(--text-dark); line-height: 1.35;">
+                    <span style="color: ${step.accentColor}; font-weight: 800; font-size: 0.95rem; line-height: 1;">✓</span>
                     <span>${d}</span>
                   </li>
                 `).join('')}
               </ul>
             </div>
 
-            <a href="#contact" onclick="document.getElementById('infoModal').classList.remove('active')" class="btn btn-primary btn-pill">
+            <a href="#contact" onclick="document.getElementById('infoModal').classList.remove('active')" class="btn btn-primary btn-pill btn-block" style="max-width: 280px; margin: 0 auto; justify-content: center;">
               Start This Process <i data-lucide="arrow-right" class="btn-icon"></i>
             </a>
           </div>
