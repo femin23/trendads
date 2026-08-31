@@ -207,11 +207,11 @@
       </div>
     </section>
 
-    <!-- SERVICES SECTION HEADER (PLACED AT THE TOP ABOVE THE PINNED STAGE) -->
+    <!-- SERVICES SECTION HEADER (PLACED OUTSIDE AT THE TOP CENTER) -->
     <div class="services-header-wrapper text-center">
       <div class="container">
-        <div class="badge-pill center icon-pill">
-          <img src="assets/icons/3d/2.png" alt="Services Icon" class="pill-3d-icon">
+        <div class="services-top-badge">
+          <span class="ec-badge-dot"></span>
           <span>OUR SERVICES &amp; EXPERTISE</span>
         </div>
       </div>
@@ -229,7 +229,8 @@
             <!-- DYNAMIC BACKGROUND: RE-GRADED WITH PHOTO & ACCENT HUE -->
             <div class="ec-bg-wrap" id="ecBgWrap">
               <div class="ec-bg-layer" id="ecBgLayer">
-                <img src="" alt="" class="ec-bg-img" id="ecBgImg">
+                <img src="assets/services/branding-bg.png" alt="" class="ec-bg-img is-active" id="ecBgImgA" data-src="assets/services/branding-bg.png">
+                <img src="" alt="" class="ec-bg-img" id="ecBgImgB" data-src="">
                 <div class="ec-bg-tint-color" id="ecBgTintColor"></div>
                 <div class="ec-bg-tint-multiply" id="ecBgTintMultiply"></div>
               </div>
@@ -241,12 +242,14 @@
 
             <!-- TOP BAR WITH CONTROLS & BRANDING -->
             <div class="ec-topbar">
-              <button type="button" class="ec-nav-btn ec-prev-btn" id="ecPrevBtn" aria-label="Previous Service">
-                <i data-lucide="arrow-left"></i> <span>PREV</span>
-              </button>
-              <button type="button" class="ec-nav-btn ec-next-btn" id="ecNextBtn" aria-label="Next Service">
-                <span>NEXT</span> <i data-lucide="arrow-right"></i>
-              </button>
+              <div class="ec-nav-group">
+                <button type="button" class="ec-nav-btn ec-prev-btn" id="ecPrevBtn" aria-label="Previous Service">
+                  <i data-lucide="arrow-left"></i> <span>PREV</span>
+                </button>
+                <button type="button" class="ec-nav-btn ec-next-btn" id="ecNextBtn" aria-label="Next Service">
+                  <span>NEXT</span> <i data-lucide="arrow-right"></i>
+                </button>
+              </div>
             </div>
 
             <!-- HEADLINE & META INFO (TRANSPARENT GLASS CARD) -->
@@ -279,13 +282,15 @@
 
             <!-- POSITION RAIL & COUNTER BAR -->
             <div class="ec-rail-wrapper">
-              <div class="ec-rail-counter font-mono">
-                <span id="ecIndexCurrent">01</span>
-                <span class="ec-rail-sep">/</span>
-                <span id="ecIndexTotal">05</span>
-              </div>
-              <div class="ec-rail-track">
-                <div class="ec-rail-thumb" id="ecRailThumb"></div>
+              <div class="ec-rail-top-row">
+                <div class="ec-rail-counter font-mono">
+                  <span id="ecIndexCurrent">01</span>
+                  <span class="ec-rail-sep">/</span>
+                  <span id="ecIndexTotal">05</span>
+                </div>
+                <div class="ec-rail-track">
+                  <div class="ec-rail-thumb" id="ecRailThumb"></div>
+                </div>
               </div>
               <div class="ec-gesture-hint">
                 <i data-lucide="mouse-pointer-click"></i>

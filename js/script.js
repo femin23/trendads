@@ -432,9 +432,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     ];
 
-    const bgImg = document.getElementById('ecBgImg');
+    const bgImgA = document.getElementById('ecBgImgA') || document.getElementById('ecBgImg');
+    const bgImgB = document.getElementById('ecBgImgB');
+    let activeBgEl = bgImgA;
+    let inactiveBgEl = bgImgB;
     const bgTintColor = document.getElementById('ecBgTintColor');
     const bgTintMultiply = document.getElementById('ecBgTintMultiply');
+
+    // Preload background & card images for instant transitions
+    servicesList.forEach(item => {
+      if (item.bgImage) {
+        const img = new Image();
+        img.src = item.bgImage;
+      }
+      if (item.image) {
+        const img = new Image();
+        img.src = item.image;
+      }
+    });
     const titleText = document.getElementById('ecTitleText');
     const creditText = document.getElementById('ecCreditText');
     const highlightDesc = document.getElementById('ecHighlightDesc');
@@ -509,6 +524,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="ec-card-dim"></span>
           <div class="ec-card-badge">
             <span class="ec-card-badge-title">${item.title.replace(/\n/g, ' ')}</span>
+            <span class="ec-card-badge-num">${String(i + 1).padStart(2, '0')}</span>
           </div>
         `;
 
@@ -543,9 +559,25 @@ document.addEventListener('DOMContentLoaded', () => {
       currentIndex = Math.max(0, Math.min(last, nextIndex));
       const active = servicesList[currentIndex];
 
-      // Update background with smooth hue transition
-      if (bgImg && active) {
-        bgImg.src = active.bgImage || active.image;
+      // Update background with smooth crossfade & hue transition
+      if (active) {
+        const targetBg = active.bgImage || active.image;
+        if (inactiveBgEl && activeBgEl) {
+          if (activeBgEl.getAttribute('data-src') !== targetBg) {
+            inactiveBgEl.src = targetBg;
+            inactiveBgEl.setAttribute('data-src', targetBg);
+            inactiveBgEl.classList.add('is-active');
+            activeBgEl.classList.remove('is-active');
+
+            const temp = activeBgEl;
+            activeBgEl = inactiveBgEl;
+            inactiveBgEl = temp;
+          }
+        } else if (activeBgEl) {
+          activeBgEl.src = targetBg;
+          activeBgEl.classList.add('is-active');
+        }
+
         if (bgTintColor) bgTintColor.style.backgroundColor = active.accent;
         if (bgTintMultiply) bgTintMultiply.style.backgroundColor = active.accent;
       }
