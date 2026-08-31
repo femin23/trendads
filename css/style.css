@@ -2412,26 +2412,14 @@ section {
     width: 100%;
   }
   .ec-topbar {
-    top: 10px;
-    left: 0;
-    right: 0;
-    padding: 0 12px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    z-index: 20;
-  }
-  .ec-nav-btn {
-    padding: 6px 14px;
-    font-size: 0.78rem;
-    gap: 6px;
+    display: none;
   }
   .ec-headline-block {
     left: 8px;
     right: 8px;
     width: auto;
     max-width: none;
-    top: 50px;
+    top: 16px;
   }
   .ec-headline-row {
     justify-content: center;
@@ -2616,23 +2604,12 @@ section {
     border-radius: 14px;
   }
   .ec-topbar {
-    top: 8px;
-    left: 0;
-    right: 0;
-    padding: 0 8px;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    z-index: 20;
-  }
-  .ec-nav-btn {
-    padding: 5px 10px;
-    font-size: 0.72rem;
+    display: none;
   }
   .ec-headline-block {
     left: 8px;
     right: 8px;
-    top: 46px;
+    top: 12px;
   }
   .ec-unified-glass-card {
     padding: 12px 14px;
