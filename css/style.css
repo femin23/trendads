@@ -2415,8 +2415,11 @@ section {
     top: 10px;
     left: 0;
     right: 0;
-    padding: 0 10px;
+    padding: 0 12px;
     width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 20;
   }
   .ec-nav-btn {
     padding: 6px 14px;
@@ -2428,7 +2431,7 @@ section {
     right: 8px;
     width: auto;
     max-width: none;
-    top: 20px;
+    top: 50px;
   }
   .ec-headline-row {
     justify-content: center;
@@ -2616,7 +2619,11 @@ section {
     top: 8px;
     left: 0;
     right: 0;
-    padding: 0 6px;
+    padding: 0 8px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 20;
   }
   .ec-nav-btn {
     padding: 5px 10px;
@@ -2625,7 +2632,7 @@ section {
   .ec-headline-block {
     left: 8px;
     right: 8px;
-    top: 14px;
+    top: 46px;
   }
   .ec-unified-glass-card {
     padding: 12px 14px;
