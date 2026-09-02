@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const serviceDetails = {
     branding: {
       title: "Branding & Identity",
-      iconImg: "assets/services/branding-card.png",
+      iconImg: "assets/services/card_branding.png",
       desc: "Perfect for businesses looking to build a strong, memorable, and professional brand identity.",
       features: [
         "Logo Design",
@@ -380,8 +380,9 @@ document.addEventListener('DOMContentLoaded', () => {
         title: "Branding &\nIdentity",
         highlight: "Build a strong, memorable, and category-defining visual brand identity that commands market authority.",
         stats: "9 DELIVERABLES &bull; 100% VECTOR KITS &bull; GUIDELINES",
-        image: "assets/services/branding-card.png",
-        bgImage: "assets/services/branding-bg.png",
+        image: "assets/services/card_branding.png",
+        bgImage: "assets/services/desktop_bg_branding.png",
+        bgMobile: "assets/services/moblie_bg_branding.png",
         credit: "BY TRENDADS BRANDING",
         meta: ["LOGO DESIGN", "BRAND GUIDELINES", "ASSET KIT"],
         accent: "#7b61ff"
@@ -445,6 +446,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const img = new Image();
         img.src = item.bgImage;
       }
+      if (item.bgMobile) {
+        const img = new Image();
+        img.src = item.bgMobile;
+      }
       if (item.image) {
         const img = new Image();
         img.src = item.image;
@@ -453,8 +458,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const titleText = document.getElementById('ecTitleText');
     const creditText = document.getElementById('ecCreditText');
     const highlightDesc = document.getElementById('ecHighlightDesc');
-    const statsBadge = document.getElementById('ecStatsBadge');
-    const metaPills = document.getElementById('ecMetaPills');
     const track = document.getElementById('ecStripTrack');
     const railThumb = document.getElementById('ecRailThumb');
     const indexCurrent = document.getElementById('ecIndexCurrent');
@@ -561,7 +564,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Update background with smooth crossfade & hue transition
       if (active) {
-        const targetBg = active.bgImage || active.image;
+        const isMobile = window.innerWidth <= 768;
+        const targetBg = (isMobile && active.bgMobile) ? active.bgMobile : (active.bgImage || active.image);
         if (inactiveBgEl && activeBgEl) {
           if (activeBgEl.getAttribute('data-src') !== targetBg) {
             inactiveBgEl.src = targetBg;
@@ -607,14 +611,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 120);
       }
 
-      if (statsBadge && active) {
-        statsBadge.innerHTML = active.stats;
-      }
-
-      if (metaPills && active) {
-        metaPills.innerHTML = active.meta.map(m => `<span class="ec-meta-pill">${m}</span>`).join('');
-      }
-
       // Position rail counters
       if (indexCurrent) indexCurrent.textContent = String(currentIndex + 1).padStart(2, '0');
       if (indexTotal) indexTotal.textContent = String(servicesList.length).padStart(2, '0');
@@ -649,6 +645,11 @@ document.addEventListener('DOMContentLoaded', () => {
       goToIndex(currentIndex);
     });
     ro.observe(container);
+    window.addEventListener('resize', () => {
+      measureLayout();
+      updateCardsGeometry();
+      goToIndex(currentIndex);
+    });
 
     // Pin wrapper for scroll-driven progression
     const pinWrapper = document.getElementById('services');
