@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const serviceDetails = {
     branding: {
       title: "Branding & Identity",
-      iconImg: "assets/services/card_branding.png",
+      bannerImg: "assets/services/desktop_bg_branding.png",
       desc: "Perfect for businesses looking to build a strong, memorable, and professional brand identity.",
       features: [
         "Logo Design",
@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     marketing: {
       title: "Digital Marketing",
-      iconImg: "assets/services/digital-marketing-card.png",
+      bannerImg: "assets/services/desktop_bg_DigitalMarketing.png",
       desc: "Designed to help businesses grow their online presence, engage audiences, and generate quality leads.",
       features: [
         "Social Media Management",
@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     web: {
       title: "Website Development",
-      iconImg: "assets/services/website-card.png",
+      bannerImg: "assets/services/desktop_bg_webdevelopment.png",
       desc: "Custom high-performance websites engineered for rapid conversions, responsiveness, and business growth.",
       features: [
         "Custom Website Design",
@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     growth: {
       title: "Complete Digital Growth",
-      iconImg: "assets/services/complete-card.png",
+      bannerImg: "assets/services/desktop_bg_CompleteDigitalGrowth.png",
       desc: "An all-in-one complete solution for businesses looking to establish, market, and grow their brand online.",
       features: [
         "Complete Branding & Identity Kit",
@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     software: {
       title: "Software Development",
-      iconImg: "assets/services/software-card.png",
+      bannerImg: "assets/services/desktop_bg_softwaredevelopment.png",
       desc: "Tailored enterprise software, custom web applications, SaaS platforms, and intelligent business automations.",
       features: [
         "Custom Web Application Development",
@@ -343,17 +343,30 @@ document.addEventListener('DOMContentLoaded', () => {
   function triggerServiceModal(serviceKey) {
     const data = serviceDetails[serviceKey];
     if (!data) return;
+    const bannerHtml = data.bannerImg ? `
+      <div class="modal-header-banner">
+        <img src="${data.bannerImg}" alt="${data.title}" class="modal-banner-img">
+      </div>
+    ` : (data.iconImg ? `
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+        <div style="width: 56px; height: 56px; border-radius: 14px; background: var(--primary-light); display: flex; align-items: center; justify-content: center; padding: 6px;">
+          <img src="${data.iconImg}" alt="${data.title}" style="width: 100%; height: 100%; object-fit: contain;">
+        </div>
+        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800;">${data.title}</h3>
+      </div>
+    ` : '');
+
+    const headerHtml = data.bannerImg ? `
+      ${bannerHtml}
+      <h3 style="font-family: var(--font-heading); font-size: 1.45rem; font-weight: 800; color: var(--text-dark); margin-bottom: 10px; line-height: 1.25;">${data.title}</h3>
+    ` : bannerHtml;
+
     const contentHtml = `
       <div style="text-align: left;">
-        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
-          <div style="width: 56px; height: 56px; border-radius: 14px; background: var(--primary-light); display: flex; align-items: center; justify-content: center; padding: 6px;">
-            <img src="${data.iconImg}" alt="${data.title}" style="width: 100%; height: 100%; object-fit: contain;">
-          </div>
-          <h3 style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 800;">${data.title}</h3>
-        </div>
-        <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 24px; line-height: 1.6;">${data.desc}</p>
-        <h4 style="font-family: var(--font-heading); font-size: 1rem; font-weight: 700; margin-bottom: 12px;">What We Deliver:</h4>
-        <ul style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px;">
+        ${headerHtml}
+        <p style="color: var(--text-muted); font-size: 1.02rem; margin-bottom: 22px; line-height: 1.55;">${data.desc}</p>
+        <h4 style="font-family: var(--font-heading); font-size: 0.98rem; font-weight: 700; margin-bottom: 12px; color: var(--text-dark);">What We Deliver:</h4>
+        <ul style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px;">
           ${data.features.map(f => `
             <li style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: var(--text-dark);">
               <i data-lucide="check-circle-2" style="width: 18px; color: var(--accent-green);"></i>
@@ -392,41 +405,47 @@ document.addEventListener('DOMContentLoaded', () => {
         title: "Digital\nMarketing",
         highlight: "Grow your online presence, capture high-intent leads, and dominate feeds with targeted Meta & Google ad campaigns.",
         stats: "8 LEAD CHANNELS &bull; META ADS &bull; MONTHLY REPORTS",
-        image: "assets/services/digital-marketing-card.png",
-        bgImage: "assets/services/digital-marketing-bg.png",
+        image: "assets/services/card_DigitalMarketing.png",
+        bgImage: "assets/services/desktop_bg_DigitalMarketing.png",
+        bgMobile: "assets/services/moblie_bg_DigitalMarketing.png",
         credit: "BY TRENDADS MARKETING",
         meta: ["LEAD GENERATION", "META ADS", "CONTENT STRATEGY"],
-        accent: "#ff2f9c"
-      },
-      {
-        id: "web",
-        title: "Website\nDevelopment",
-        highlight: "Custom high-performance web applications engineered for rapid loading, seamless UX, and high conversion rates.",
-        stats: "TURNKEY LAUNCH &bull; WHATSAPP & FORMS &bull; SEO READY",
-        image: "assets/services/website-card.png",
-        bgImage: "assets/services/website-bg.png",
-        credit: "BY TRENDADS WEB",
-        meta: ["CUSTOM DESIGN", "RESPONSIVE UI/UX", "WHATSAPP SETUP"],
-        accent: "#00c8ff"
+        accent: "#ff2f9c",
+        alignRight: true
       },
       {
         id: "growth",
         title: "Complete Digital\nGrowth",
         highlight: "An all-in-one powerhouse solution combining full Branding, custom Website Development, and high-impact Digital Marketing.",
         stats: "360° COMPLETE BUNDLE &bull; BRANDING + WEB + ADS",
-        image: "assets/services/complete-card.png",
-        bgImage: "assets/services/complete-bg.png",
+        image: "assets/services/card_CompleteDigitalGrowth.png",
+        bgImage: "assets/services/desktop_bg_CompleteDigitalGrowth.png",
+        bgMobile: "assets/services/moblie_bg_CompleteDigitalGrowth.png",
         credit: "ALL-IN-ONE GROWTH BUNDLE",
         meta: ["FULL BRANDING", "CUSTOM WEB", "PERFORMANCE ADS"],
         accent: "#ff4114"
+      },
+      {
+        id: "web",
+        title: "Website\nDevelopment",
+        highlight: "Custom high-performance web applications engineered for rapid loading, seamless UX, and high conversion rates.",
+        stats: "TURNKEY LAUNCH &bull; WHATSAPP & FORMS &bull; SEO READY",
+        image: "assets/services/card_webdevelopment.png",
+        bgImage: "assets/services/desktop_bg_webdevelopment.png",
+        bgMobile: "assets/services/moblie_bg_webdevelopment.png",
+        credit: "BY TRENDADS WEB",
+        meta: ["CUSTOM DESIGN", "RESPONSIVE UI/UX", "WHATSAPP SETUP"],
+        accent: "#00c8ff",
+        alignRight: true
       },
       {
         id: "software",
         title: "Software\nDevelopment",
         highlight: "Tailored enterprise software, custom SaaS platforms, API integrations, and business automation systems engineered to scale.",
         stats: "SCALABLE ARCHITECTURE &bull; CUSTOM SAAS &bull; API & CRM",
-        image: "assets/services/software-card.png",
-        bgImage: "assets/services/software-bg.png",
+        image: "assets/services/card_softwaredevelopment.png",
+        bgImage: "assets/services/desktop_bg_softwaredevelopment.png",
+        bgMobile: "assets/services/moblie_bg_softwaredevelopment.png",
         credit: "BY TRENDADS ENGINEERING",
         meta: ["CUSTOM SAAS", "API INTEGRATIONS", "SCALABLE APPS"],
         accent: "#10b981"
@@ -455,10 +474,22 @@ document.addEventListener('DOMContentLoaded', () => {
         img.src = item.image;
       }
     });
+    const unifiedCard = document.getElementById('ecUnifiedCard');
+    const readMoreBtn = document.getElementById('ecReadMoreBtn');
     const titleText = document.getElementById('ecTitleText');
     const creditText = document.getElementById('ecCreditText');
     const highlightDesc = document.getElementById('ecHighlightDesc');
     const track = document.getElementById('ecStripTrack');
+
+    function hexToRgba(hex, alpha) {
+      if (!hex) return `rgba(15, 23, 42, ${alpha})`;
+      const cleanHex = hex.replace('#', '');
+      const fullHex = cleanHex.length === 3 ? cleanHex.split('').map(c => c + c).join('') : cleanHex;
+      const r = parseInt(fullHex.substring(0, 2), 16) || 0;
+      const g = parseInt(fullHex.substring(2, 4), 16) || 0;
+      const b = parseInt(fullHex.substring(4, 6), 16) || 0;
+      return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+    }
     const railThumb = document.getElementById('ecRailThumb');
     const indexCurrent = document.getElementById('ecIndexCurrent');
     const indexTotal = document.getElementById('ecIndexTotal');
@@ -522,12 +553,14 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.height = `${i === currentIndex ? fullH : halfH}px`;
         card.style.setProperty('--item-accent', item.accent);
 
+        const badgeAccentBg = hexToRgba(item.accent, 0.32);
+        const badgeAccentBorder = hexToRgba(item.accent, 0.35);
+
         card.innerHTML = `
           <img src="${item.image}" alt="${item.title}" class="ec-card-img" draggable="false">
           <span class="ec-card-dim"></span>
-          <div class="ec-card-badge">
+          <div class="ec-card-badge" style="background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, ${badgeAccentBg} 100%); border-color: ${badgeAccentBorder};">
             <span class="ec-card-badge-title">${item.title.replace(/\n/g, ' ')}</span>
-            <span class="ec-card-badge-num">${String(i + 1).padStart(2, '0')}</span>
           </div>
         `;
 
@@ -599,6 +632,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (creditText && active) {
         creditText.textContent = active.credit;
+        if (active.accent) {
+          creditText.style.backgroundColor = active.accent;
+          creditText.style.boxShadow = `0 2px 10px ${active.accent}66`;
+        }
       }
 
       if (highlightDesc && active) {
@@ -609,6 +646,22 @@ document.addEventListener('DOMContentLoaded', () => {
           highlightDesc.style.opacity = '1';
           highlightDesc.style.transform = 'translateY(0)';
         }, 120);
+      }
+
+      // Update text card background to match active service color theme with glass opacity
+      if (unifiedCard && active && active.accent) {
+        unifiedCard.style.background = `linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, ${hexToRgba(active.accent, 0.28)} 100%)`;
+        unifiedCard.style.borderColor = hexToRgba(active.accent, 0.4);
+        unifiedCard.style.boxShadow = `0 20px 45px rgba(0, 0, 0, 0.25), 0 0 28px ${hexToRgba(active.accent, 0.22)}`;
+      }
+
+      if (readMoreBtn && active && active.accent) {
+        readMoreBtn.style.setProperty('--read-more-glow', hexToRgba(active.accent, 0.45));
+      }
+
+      // Position text card on right & controls on left for Digital Marketing & Website Development
+      if (container) {
+        container.classList.toggle('ec-align-right', !!(active && active.alignRight));
       }
 
       // Position rail counters
@@ -721,6 +774,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const next = currentIndex === servicesList.length - 1 ? 0 : currentIndex + 1;
         goToIndex(next);
         syncScrollWithIndex(next);
+      });
+    }
+
+    // Read More button opens popup modal for current service
+    if (readMoreBtn) {
+      readMoreBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const active = servicesList[currentIndex];
+        if (active) {
+          triggerServiceModal(active.id);
+        }
       });
     }
 
