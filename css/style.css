@@ -1933,10 +1933,19 @@ section {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.footer-parent-label {
+  font-family: var(--font-heading);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #60a5fa;
+  margin: 10px 0 0 0;
+  letter-spacing: 0.03em;
+}
+
 .footer-tagline {
   color: #94a3b8;
   font-size: 0.95rem;
-  margin: 16px 0 0 0;
+  margin: 14px 0 0 0;
   max-width: 360px;
   line-height: 1.6;
 }

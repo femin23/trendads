@@ -1,0 +1,20 @@
+# Enable Rewrite Engine
+Options -MultiViews
+RewriteEngine On
+
+# 1. Redirect /index.html to root /
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+index\.html [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# 2. Redirect external requests with .html extension to clean URL (e.g., /page.html -> /page)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# 3. Remove trailing slash from non-directory URLs (e.g., /page/ -> /page)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# 4. Internally rewrite extensionless URLs to .html if corresponding file exists
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
